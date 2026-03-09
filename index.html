@@ -1441,87 +1441,86 @@ Le seul workflow conçu<br>pour faire cliquer.
         <div style="background:#111; padding:40px 36px;">
           <span style="display:inline-block; background:rgba(220,50,50,0.15); color:#f87171; font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:24px; font-family:var(--font-mono);">L'ANCIENNE MÉTHODE</span>
 
-          <!-- Mockup gauche V2 -->
+          <!-- Mockup gauche V3 -->
           <div style="margin-bottom:28px; width:100%; aspect-ratio:16/9; position:relative; overflow:hidden; border-radius:12px; border:1px solid rgba(255,255,255,0.04); background:#111111; box-shadow:0 0 60px rgba(0,0,0,0.5); display:flex;">
             <style>
-              .mg2-mono{font-family:'JetBrains Mono',monospace;}
-              .mg2-frame::before{content:'';position:absolute;top:-10%;left:20%;width:60%;height:40%;background:radial-gradient(ellipse,rgba(74,109,140,0.05) 0%,transparent 70%);pointer-events:none;z-index:0;}
-              .mg2-cursor{display:inline-block;width:2px;height:11px;background:#555;animation:mg2Blink 1.2s infinite;vertical-align:middle;margin-left:2px;}
-              @keyframes mg2Blink{0%,50%{opacity:1}51%,100%{opacity:0}}
-              .mg2-struck{color:#3a3a3a;text-decoration:line-through;text-decoration-color:rgba(255,255,255,0.1);}
+              .mg3-mono{font-family:'JetBrains Mono',monospace;}
+              .mg3-frame::after{content:'';position:absolute;top:-10%;left:20%;width:60%;height:40%;background:radial-gradient(ellipse,rgba(74,109,140,0.05) 0%,transparent 70%);pointer-events:none;z-index:0;}
+              .mg3-cursor{display:inline-block;width:2px;height:11px;background:#555;animation:mg3Blink 1.2s infinite;vertical-align:middle;margin-left:2px;}
+              @keyframes mg3Blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+              .mg3-struck{color:#3a3a3a;text-decoration:line-through;text-decoration-color:rgba(255,255,255,0.1);}
+              .mg3-muted{color:#333;}
+              .mg3-line{font-family:'JetBrains Mono',monospace;font-size:clamp(7px,1vw,10px);line-height:1.85;color:#555;}
             </style>
-            <div class="mg2-frame" style="position:absolute;inset:0;display:flex;">
+            <div class="mg3-frame" style="position:absolute;inset:0;display:flex;">
 
               <!-- Colonne gauche : script -->
-              <div style="flex:1;padding:28px 24px;display:flex;flex-direction:column;z-index:1;border-right:1px solid rgba(255,255,255,0.04);">
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-                  <span class="mg2-mono" style="font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:#3a3a3a;">Script en cours</span>
-                  <span class="mg2-mono" style="font-size:9px;color:#333;">23:47</span>
+              <div style="flex:1.15;padding:4.5% 4%;display:flex;flex-direction:column;z-index:1;border-right:1px solid rgba(255,255,255,0.04);overflow:hidden;">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3%;">
+                  <span class="mg3-mono" style="font-size:clamp(6px,0.85vw,8px);letter-spacing:2.5px;text-transform:uppercase;color:#3a3a3a;">Script en cours</span>
+                  <span class="mg3-mono" style="font-size:clamp(7px,0.9vw,9px);color:#333;">23:47</span>
                 </div>
-                <div style="background:rgba(255,255,255,0.015);border:1px solid rgba(255,255,255,0.04);border-radius:8px;padding:16px 18px;flex:1;display:flex;flex-direction:column;overflow:hidden;">
-                  <div style="display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.04);margin-bottom:14px;">
-                    <span class="mg2-mono" style="font-size:13px;font-weight:600;color:#555;">TITRE VIDÉO PROVISOIRE <span style="color:#F87171;opacity:0.6;">??</span></span>
-                    <span class="mg2-mono" style="font-size:7px;letter-spacing:1px;text-transform:uppercase;color:#F87171;background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.12);padding:2px 8px;border-radius:3px;opacity:0.7;">Non validé</span>
+                <div style="background:rgba(255,255,255,0.015);border:1px solid rgba(255,255,255,0.04);border-radius:8px;padding:3.5% 4%;flex:1;display:flex;flex-direction:column;overflow:hidden;">
+                  <div style="display:flex;align-items:center;gap:8px;padding-bottom:2.5%;border-bottom:1px solid rgba(255,255,255,0.04);margin-bottom:3%;flex-wrap:wrap;">
+                    <span class="mg3-mono" style="font-size:clamp(9px,1.3vw,13px);font-weight:600;color:#555;">TITRE VIDÉO PROVISOIRE <span style="color:#F87171;opacity:0.6;">??</span></span>
+                    <span class="mg3-mono" style="font-size:clamp(5px,0.7vw,7px);letter-spacing:1px;text-transform:uppercase;color:#F87171;background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.12);padding:2px 8px;border-radius:3px;opacity:0.7;">Non validé</span>
                   </div>
-                  <div class="mg2-mono mg2-struck" style="font-size:10px;line-height:1.9;">Ce que j'aurais aimé savoir quand j'ai commencé</div>
-                  <div class="mg2-mono mg2-struck" style="font-size:10px;line-height:1.9;">Les erreurs que tout le monde fait au début</div>
-                  <div class="mg2-mono" style="font-size:10px;line-height:1.9;color:#333;font-style:italic;">(trouver un meilleur angle...)</div>
-                  <div style="height:1px;background:rgba(255,255,255,0.03);margin:10px 0;"></div>
-                  <div class="mg2-mono" style="font-size:9px;font-weight:600;color:#4a6d8c;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">Hook d'intro :</div>
-                  <div class="mg2-mono" style="font-size:10px;line-height:1.9;color:#555;">Salut à tous, aujourd'hui on va</div>
-                  <div class="mg2-mono" style="font-size:10px;line-height:1.9;color:#555;">parler de quelque chose qui va</div>
-                  <div class="mg2-mono" style="font-size:10px;line-height:1.9;color:#555;">changer votre façon de voir...</div>
-                  <div class="mg2-mono" style="font-size:10px;line-height:1.9;color:#333;font-style:italic;">// reformuler, trop générique</div>
-                  <div style="height:1px;background:rgba(255,255,255,0.03);margin:10px 0;"></div>
-                  <div class="mg2-mono" style="font-size:10px;line-height:1.9;color:#333;font-style:italic;">(partie 1 — mon expérience)</div>
-                  <div class="mg2-mono" style="font-size:10px;line-height:1.9;color:#333;font-style:italic;">(partie 2 — les leçons)</div>
-                  <div class="mg2-mono" style="font-size:10px;line-height:1.9;color:#333;font-style:italic;">(partie 3 — ???)</div>
-                  <div class="mg2-mono" style="font-size:10px;line-height:1.9;color:#4a6d8c;opacity:0.7;font-style:italic;margin-top:8px;">// le tournage est demain matin<span class="mg2-cursor"></span></div>
+                  <div class="mg3-line mg3-struck">Ce que j'aurais aimé savoir quand j'ai commencé</div>
+                  <div class="mg3-line mg3-struck">Les erreurs que tout le monde fait au début</div>
+                  <div class="mg3-line mg3-muted"><span style="color:#444;font-style:italic;">(trouver un meilleur angle...)</span></div>
+                  <div style="height:1px;background:rgba(255,255,255,0.03);margin:2% 0;"></div>
+                  <div class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);font-weight:600;color:#4a6d8c;letter-spacing:1px;text-transform:uppercase;margin-bottom:1%;margin-top:0.5%;">Hook d'intro :</div>
+                  <div class="mg3-line">Salut à tous, aujourd'hui on va</div>
+                  <div class="mg3-line">parler de quelque chose qui va</div>
+                  <div class="mg3-line">changer votre façon de voir...</div>
+                  <div class="mg3-line mg3-muted"><span style="color:#4a6d8c;font-style:italic;opacity:0.7;">// reformuler, trop générique</span></div>
+                  <div style="height:1px;background:rgba(255,255,255,0.03);margin:2% 0;"></div>
+                  <div class="mg3-line mg3-muted"><span style="color:#444;font-style:italic;">(partie 1 — mon expérience)</span></div>
+                  <div class="mg3-line mg3-muted"><span style="color:#444;font-style:italic;">(partie 2 — les leçons)</span></div>
+                  <div class="mg3-line mg3-muted"><span style="color:#444;font-style:italic;">(partie 3 — ???)</span></div>
+                  <div class="mg3-line mg3-muted" style="margin-top:2%;"><span style="color:#4a6d8c;font-style:italic;opacity:0.7;">// le tournage est demain matin</span><span class="mg3-cursor"></span></div>
                 </div>
               </div>
 
-              <!-- Colonne droite : YouTube Studio vide -->
-              <div style="width:44%;padding:28px 24px;display:flex;flex-direction:column;z-index:1;">
-                <div class="mg2-mono" style="font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:#3a3a3a;margin-bottom:16px;">Packaging</div>
+              <!-- Colonne droite : packaging vide -->
+              <div style="width:38%;padding:4.5% 3.5%;display:flex;flex-direction:column;z-index:1;overflow:hidden;">
+                <div class="mg3-mono" style="font-size:clamp(6px,0.85vw,8px);letter-spacing:2.5px;text-transform:uppercase;color:#3a3a3a;margin-bottom:3%;">Packaging</div>
 
-                <!-- YT Studio -->
-                <div style="background:rgba(255,255,255,0.015);border:1px solid rgba(255,255,255,0.04);border-radius:8px;padding:16px;margin-bottom:12px;">
-                  <div class="mg2-mono" style="font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:#3a3a3a;margin-bottom:12px;">YouTube Studio</div>
-                  <div style="width:100%;aspect-ratio:16/9;background:#0a0a0a;border:1px dashed rgba(255,255,255,0.06);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
-                    <div class="mg2-mono" style="font-size:8px;color:#2a2a2a;text-align:center;line-height:1.6;">Aucune miniature<br>importée</div>
+                <div style="background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.03);border-radius:8px;padding:4%;margin-bottom:3%;">
+                  <div class="mg3-mono" style="font-size:clamp(5px,0.75vw,8px);letter-spacing:1.5px;text-transform:uppercase;color:#2a2a2a;margin-bottom:3%;">YouTube Studio</div>
+                  <div style="width:100%;aspect-ratio:16/9;background:#0a0a0a;border:1px dashed rgba(255,255,255,0.04);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:3%;">
+                    <div class="mg3-mono" style="font-size:clamp(5px,0.75vw,8px);color:#222;text-align:center;line-height:1.6;">Aucune miniature<br>importée</div>
                   </div>
-                  <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.02);">
-                    <span class="mg2-mono" style="font-size:9px;color:#3a3a3a;">Titre</span>
-                    <span class="mg2-mono" style="font-size:9px;color:#555;font-style:italic;">"à voir plus tard"</span>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:1.5% 0;border-bottom:1px solid rgba(255,255,255,0.015);">
+                    <span class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);color:#2a2a2a;">Titre</span>
+                    <span class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);color:#444;font-style:italic;">"à voir plus tard"</span>
                   </div>
-                  <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.02);">
-                    <span class="mg2-mono" style="font-size:9px;color:#3a3a3a;">Description</span>
-                    <span class="mg2-mono" style="font-size:9px;color:#2a2a2a;">—</span>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:1.5% 0;border-bottom:1px solid rgba(255,255,255,0.015);">
+                    <span class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);color:#2a2a2a;">Description</span>
+                    <span class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);color:#1e1e1e;">—</span>
                   </div>
-                  <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;">
-                    <span class="mg2-mono" style="font-size:9px;color:#3a3a3a;">Tags</span>
-                    <span class="mg2-mono" style="font-size:9px;color:#2a2a2a;">—</span>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:1.5% 0;">
+                    <span class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);color:#2a2a2a;">Tags</span>
+                    <span class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);color:#1e1e1e;">—</span>
                   </div>
                 </div>
 
-                <!-- Aucune validation -->
-                <div style="background:rgba(248,113,113,0.04);border:1px solid rgba(248,113,113,0.08);border-radius:8px;padding:14px 16px;margin-bottom:12px;">
-                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-                    <div style="width:6px;height:6px;border-radius:50%;background:#555;opacity:0.4;"></div>
-                    <span class="mg2-mono" style="font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#555;">Aucune validation</span>
+                <div style="background:rgba(248,113,113,0.03);border:1px solid rgba(248,113,113,0.06);border-radius:8px;padding:4%;margin-bottom:3%;">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:3%;">
+                    <div style="width:6px;height:6px;border-radius:50%;background:#F87171;opacity:0.25;flex-shrink:0;"></div>
+                    <span class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);letter-spacing:1px;text-transform:uppercase;color:#555;">Aucune validation</span>
                   </div>
-                  <div style="display:flex;flex-direction:column;gap:4px;">
-                    <div style="display:flex;align-items:center;gap:8px;"><span style="color:#F87171;opacity:0.4;font-size:10px;width:10px;text-align:center;">✕</span><span class="mg2-mono" style="font-size:9px;color:#3a3a3a;">Titre → pas de tension</span></div>
-                    <div style="display:flex;justify-content:center;padding:1px 0;"><div style="width:1px;height:6px;background:rgba(255,255,255,0.04);"></div></div>
-                    <div style="display:flex;align-items:center;gap:8px;"><span style="color:#F87171;opacity:0.4;font-size:10px;width:10px;text-align:center;">✕</span><span class="mg2-mono" style="font-size:9px;color:#3a3a3a;">Description → vide</span></div>
-                    <div style="display:flex;justify-content:center;padding:1px 0;"><div style="width:1px;height:6px;background:rgba(255,255,255,0.04);"></div></div>
-                    <div style="display:flex;align-items:center;gap:8px;"><span style="color:#F87171;opacity:0.4;font-size:10px;width:10px;text-align:center;">✕</span><span class="mg2-mono" style="font-size:9px;color:#3a3a3a;">Résultat → inconnu</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px;">
+                    <div style="display:flex;align-items:center;gap:8px;"><span style="color:#F87171;opacity:0.35;font-size:clamp(7px,1vw,10px);width:10px;text-align:center;flex-shrink:0;">✕</span><span class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);color:#3a3a3a;">Titre → aucune tension</span></div>
+                    <div style="padding-left:4px;"><div style="width:1px;height:5px;background:rgba(255,255,255,0.03);margin-left:4px;"></div></div>
+                    <div style="display:flex;align-items:center;gap:8px;"><span style="color:#F87171;opacity:0.35;font-size:clamp(7px,1vw,10px);width:10px;text-align:center;flex-shrink:0;">✕</span><span class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);color:#3a3a3a;">Description → vide</span></div>
+                    <div style="padding-left:4px;"><div style="width:1px;height:5px;background:rgba(255,255,255,0.03);margin-left:4px;"></div></div>
+                    <div style="display:flex;align-items:center;gap:8px;"><span style="color:#F87171;opacity:0.35;font-size:clamp(7px,1vw,10px);width:10px;text-align:center;flex-shrink:0;">✕</span><span class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);color:#3a3a3a;">Résultat → inconnu</span></div>
                   </div>
                 </div>
 
-                <!-- Note -->
-                <div style="background:rgba(196,168,79,0.04);border:1px solid rgba(196,168,79,0.08);border-radius:8px;padding:12px 14px;margin-top:auto;">
-                  <div class="mg2-mono" style="font-size:9px;color:#c4a84f;opacity:0.6;line-height:1.5;">Le tournage est dans 8h.<br>Le packaging n'existe pas encore.</div>
+                <div style="background:rgba(196,168,79,0.03);border:1px solid rgba(196,168,79,0.06);border-radius:8px;padding:3% 4%;margin-top:auto;">
+                  <div class="mg3-mono" style="font-size:clamp(6px,0.85vw,9px);color:#c4a84f;opacity:0.5;line-height:1.5;">Le tournage est dans 8h.<br>Le packaging n'existe pas encore.</div>
                 </div>
               </div>
 
