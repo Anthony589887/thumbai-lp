@@ -1895,45 +1895,69 @@ Le seul workflow conçu<br>pour faire cliquer.
 
       <!-- TAB 3 -->
       <div class="tab-panel" id="tab-2" style="display:none; grid-template-columns:1fr 1fr; gap:2px; border-radius:16px; overflow:hidden; border:1px solid var(--border);">
+
+        <!-- Gauche -->
         <div style="background:#111; padding:40px 36px;">
           <span style="display:inline-block; background:rgba(220,50,50,0.15); color:#f87171; font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:24px; font-family:var(--font-mono);">L'ANCIENNE MÉTHODE</span>
-          <div style="background:#0A0A0A; border:1px solid #1A1A1A; border-radius:12px; padding:20px; margin-bottom:28px; font-family:var(--font-mono); font-size:12px; color:var(--text-3); line-height:1.8;">
-            <div style="margin-bottom:8px; color:#888; font-style:italic;">"C'est l'algo. Ou la niche. Ou le moment."</div>
-            <div style="background:rgba(220,50,50,0.1); border:1px solid rgba(220,50,50,0.2); border-radius:8px; padding:10px 14px;">
-              <div style="color:#f87171; font-size:11px; margin-bottom:4px;">6 mois de données.</div>
-              <div style="color:#f87171; font-size:13px; font-weight:600;">0 apprentissage actionnable sur le packaging.</div>
+
+          <!-- Tableau rouge -->
+          <div style="border:1px solid rgba(220,50,50,0.2); border-radius:10px; overflow:hidden; margin-bottom:24px; font-family:var(--font-mono); font-size:11px;">
+            <div style="display:flex; justify-content:space-between; padding:10px 14px; border-bottom:1px solid rgba(220,50,50,0.15); background:rgba(220,50,50,0.05);">
+              <span style="color:#666;">CTR réel</span>
+              <span style="color:#f87171; font-weight:700;">2,4%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:10px 14px; border-bottom:1px solid rgba(220,50,50,0.15); background:rgba(220,50,50,0.03);">
+              <span style="color:#666;">Cause identifiée</span>
+              <span style="color:#f87171; font-weight:700;">aucune</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:10px 14px; background:rgba(220,50,50,0.05);">
+              <span style="color:#666;">Action possible</span>
+              <span style="color:#f87171; font-weight:700;">aucune</span>
             </div>
           </div>
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;CTR brut sans diagnostic — tu vois le chiffre, pas la cause.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Aucun lien entre score packaging et performance réelle.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;L'échec d'une vidéo n'informe pas la suivante.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Tu attribues les mauvais résultats à l'algo ou à la niche.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Tu accumules des données. Tu n'apprends rien.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6; margin-top:6px; font-weight:600; font-style:italic;">Tu espères. Tu publies. Tu subis.</div>
+
+          <!-- Liste -->
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65;"><span style="color:#f87171;">✕</span> &nbsp;Tu as 2,4% de CTR — tu ne sais pas si c’est le titre, la miniature, le sujet ou le timing. Ou 18% de CTR mais rétention plate, YouTube te pénalise et distribue moins bien ta vidéo que ce qu’elle aurait dû faire. Les deux te coûtent. Les deux restent inexplliqués.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65;"><span style="color:#f87171;">✕</span> &nbsp;Tu pourrais changer la miniature maintenant — mais tu ne sais pas si ça changerait quoi que ce soit.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65;"><span style="color:#f87171;">✕</span> &nbsp;10 heures de travail. Ton seul retour exploitable : un chiffre sans cause.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65;"><span style="color:#f87171;">✕</span> &nbsp;Ton analyse : "le sujet était peut-être mauvais." Tu repars avec la même incertitude.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65;"><span style="color:#f87171;">✕</span> &nbsp;Dans 3 semaines tu publies la suivante. Sans avoir rien appris de précis.</div>
+            <div style="font-size:13px; color:#666; line-height:1.65; margin-top:6px; font-weight:600; font-style:italic;">Ta prochaine vidéo repart de zéro. Comme celle-là. Comme toutes les autres avant.</div>
           </div>
         </div>
+
+        <!-- Droite -->
         <div style="background:#161616; padding:40px 36px;">
           <span style="display:inline-block; background:rgba(255,92,0,0.15); color:var(--orange); font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:24px; font-family:var(--font-mono); width:fit-content;">AVEC THUMBAI</span>
-          <div style="background:#0A0A0A; border:1px solid #1A1A1A; border-radius:12px; padding:20px; margin-bottom:28px; font-family:var(--font-mono); font-size:12px; color:var(--text-3); line-height:1.8;">
-            <div style="margin-bottom:6px;">CTR réel récupéré : <span style="color:#4ade80; font-weight:700;">8,4%</span></div>
-            <div style="margin-bottom:6px;">Score prédit : <span style="color:var(--orange);">81/100</span> · <span style="color:#4ade80;">✓ Corrélation confirmée</span></div>
-            <div style="margin-bottom:10px;">Rétention : <span style="color:#4ade80;">58%</span> · Quadrant B ✓</div>
-            <div style="background:rgba(255,92,0,0.1); border:1px solid rgba(255,92,0,0.2); border-radius:8px; padding:10px 14px;">
-              <div style="color:var(--orange); font-size:11px; margin-bottom:6px;">Apprentissage activé (3+ vidéos liées)</div>
-              <div style="display:flex; justify-content:space-between;"><span>CTR moyen réel</span><span style="color:#4ade80;">7,1%</span></div>
-              <div style="display:flex; justify-content:space-between;"><span>Vs benchmark niche</span><span style="color:#4ade80;">+3,8 pts</span></div>
+
+          <!-- Tableau vert/orange -->
+          <div style="border:1px solid rgba(34,197,94,0.2); border-radius:10px; overflow:hidden; margin-bottom:24px; font-family:var(--font-mono); font-size:11px;">
+            <div style="display:flex; justify-content:space-between; padding:10px 14px; border-bottom:1px solid rgba(34,197,94,0.15); background:rgba(34,197,94,0.05);">
+              <span style="color:#666;">CTR réel vs prédit</span>
+              <span style="color:#22c55e; font-weight:700;">12,1% · dans la fourchette</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:10px 14px; border-bottom:1px solid rgba(34,197,94,0.15); background:rgba(34,197,94,0.03);">
+              <span style="color:#666;">Axe à corriger</span>
+              <span style="color:var(--orange); font-weight:700;">Cohérence · 78/100</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:10px 14px; background:rgba(34,197,94,0.05);">
+              <span style="color:#666;">Action immédiate</span>
+              <span style="color:#22c55e; font-weight:700;">A/B test miniature · lancé</span>
             </div>
           </div>
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;<strong style="color:var(--text);">CTR réel confronté</strong> au score prédit après chaque publication.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;<strong style="color:var(--text);">Corrélation score/CTR</strong> visible sur ta chaîne spécifiquement.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;À partir de 3 vidéos liées : benchmark personnalisé activé.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;Chaque vidéo publiée rend ThumbAI plus précis sur toi.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;Tu accumules des données. Tu apprends quelque chose.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6; margin-top:6px; font-weight:600; font-style:italic; color:var(--text);">Tu sais. Tu publies. Tu mesures.</div>
+
+          <!-- Liste -->
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65;"><span style="color:var(--orange);">✓</span> &nbsp;Tu as 12,1% de CTR, ThumbAI avait prédit 10–12%. Tu sais que c’est le modèle qui tient. Excellente rétention, la cohérence est confirmée. YouTube distribue ce que le packaging promettait. Les deux sont expliqués. Les deux sont reproductibles.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65;"><span style="color:var(--orange);">✓</span> &nbsp;La miniature est encore modifiable. Tu sais exactement quel axe coince. Tu changes et A/B test grâce aux données maintenant.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65;"><span style="color:var(--orange);">✓</span> &nbsp;10 heures de travail. Ton retour : un score, une cause, une action.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65;"><span style="color:var(--orange);">✓</span> &nbsp;Ton analyse : "la cohérence était à 78, je corrige ça sur la prochaine." Tu repars avec une décision.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65;"><span style="color:var(--orange);">✓</span> &nbsp;Dans 1 semaine tu publies la suivante. En ayant appris quelque chose de précis sur celle-là.</div>
+            <div style="font-size:13px; color:var(--text); line-height:1.65; margin-top:6px; font-weight:600; font-style:italic;">Ta prochaine vidéo repart plus haut. Comme celle-là. Comme toutes celles d’après.</div>
           </div>
         </div>
+
       </div>
 
     </div><!-- /tabs-container -->
