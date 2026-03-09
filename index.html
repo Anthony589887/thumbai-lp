@@ -975,6 +975,121 @@
     .hero-ctas { flex-direction: column; align-items: stretch; }
   }
 .nav-logo, .footer-logo { font-family: 'Syne', sans-serif !important; }
+
+  /* ═══════════════════════════════════════
+     RESPONSIVE — TABLETTE (max 1024px)
+  ═══════════════════════════════════════ */
+  @media (max-width: 1024px) {
+    .diagnosis-layout,
+    .explainer-layout,
+    .score-grid { grid-template-columns: 1fr; gap: 48px; }
+
+    .steps-grid,
+    .features-grid { grid-template-columns: 1fr 1fr; }
+
+    .testimonials-row { grid-template-columns: 1fr 1fr; }
+
+    .kpi-row { grid-template-columns: 1fr 1fr; }
+
+    .hero-title { font-size: clamp(36px, 6vw, 56px); }
+  }
+
+  /* ═══════════════════════════════════════
+     RESPONSIVE — MOBILE (max 768px)
+  ═══════════════════════════════════════ */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+
+    section { padding: 64px 20px; }
+
+    .hero { padding: 120px 20px 64px; }
+    .hero-title {
+      font-size: clamp(32px, 8vw, 48px);
+      letter-spacing: -1.5px;
+    }
+    .hero-sub { font-size: 15px; }
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .btn-primary, .btn-secondary { justify-content: center; }
+
+    .stat-strip {
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .stat-sep { display: none; }
+    .stat-item { min-width: 120px; }
+
+    .hero-video-wrap { margin-top: 48px; }
+    .hero-video-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .video-footer-right { gap: 20px; }
+
+    .diagnosis-layout,
+    .explainer-layout,
+    .score-grid { grid-template-columns: 1fr; gap: 40px; }
+
+    .steps-grid,
+    .features-grid { grid-template-columns: 1fr; }
+
+    .step-card + .step-card { border-left: none; border-top: 1px solid var(--border); }
+    .feature-card { border-right: none; }
+
+    .section-title {
+      font-size: clamp(26px, 6vw, 36px);
+      letter-spacing: -1px;
+    }
+
+    .kpi-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .kpi-box-val { font-size: 18px; }
+
+    .score-grid { grid-template-columns: 1fr; }
+    .score-ring-outer { width: 160px; height: 160px; }
+    .score-ring-num { font-size: 40px; }
+
+    .testimonials-row { grid-template-columns: 1fr; }
+
+    /* Miroir douleurs — colonne unique */
+    .reveal[style*="grid"] > div,
+    [style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    .final-cta-title {
+      font-size: clamp(26px, 7vw, 38px);
+      letter-spacing: -1px;
+    }
+
+    footer {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      padding: 32px 20px;
+    }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+
+    .vn-act { flex-direction: column; gap: 6px; }
+    .vn-act-label { min-width: auto; }
+
+    .diagnosis-card-body { padding: 16px; }
+    .video-row { gap: 8px; }
+    .video-title-text { font-size: 11px; }
+  }
+
+
+  @media (max-width: 768px) {
+    .mirror-row { grid-template-columns: 1fr !important; }
+    .mirror-row > div:first-child {
+      border-right: none !important;
+      border-bottom: 1px solid #1A1A1A;
+      padding-bottom: 20px !important;
+    }
+    .mirror-row > div:last-child { padding-top: 16px !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -1471,7 +1586,7 @@
     <div style="border: 1px solid #1A1A1A; border-radius: 16px; overflow: hidden;">
 
       <!-- Row 1 -->
-      <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #1A1A1A;">
+      <div class="reveal" class="mirror-row" style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #1A1A1A;">
         <div style="padding: 36px 40px; border-right: 1px solid #1A1A1A;">
           <p style="font-size: 15px; font-style: italic; color: #888; line-height: 1.7; margin: 0;">❝ Je publie et je découvre mon CTR 48h après. Trop tard pour corriger. ❞</p>
         </div>
@@ -1481,7 +1596,7 @@
       </div>
 
       <!-- Row 2 -->
-      <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #1A1A1A;">
+      <div class="reveal" class="mirror-row" style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #1A1A1A;">
         <div style="padding: 36px 40px; border-right: 1px solid #1A1A1A;">
           <p style="font-size: 15px; font-style: italic; color: #888; line-height: 1.7; margin: 0;">❝ Ma miniature est belle mais mes vidéos sous-performent quand même. ❞</p>
         </div>
@@ -1491,7 +1606,7 @@
       </div>
 
       <!-- Row 3 -->
-      <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #1A1A1A;">
+      <div class="reveal" class="mirror-row" style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #1A1A1A;">
         <div style="padding: 36px 40px; border-right: 1px solid #1A1A1A;">
           <p style="font-size: 15px; font-style: italic; color: #888; line-height: 1.7; margin: 0;">❝ Mon titre et ma miniature montrent la même chose, je pensais que c'était une bonne idée. ❞</p>
         </div>
@@ -1501,7 +1616,7 @@
       </div>
 
       <!-- Row 4 -->
-      <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #1A1A1A;">
+      <div class="reveal" class="mirror-row" style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #1A1A1A;">
         <div style="padding: 36px 40px; border-right: 1px solid #1A1A1A;">
           <p style="font-size: 15px; font-style: italic; color: #888; line-height: 1.7; margin: 0;">❝ Je passe des heures sur chaque miniature sans savoir si ça va marcher. ❞</p>
         </div>
@@ -1511,7 +1626,7 @@
       </div>
 
       <!-- Row 5 -->
-      <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #1A1A1A;">
+      <div class="reveal" class="mirror-row" style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #1A1A1A;">
         <div style="padding: 36px 40px; border-right: 1px solid #1A1A1A;">
           <p style="font-size: 15px; font-style: italic; color: #888; line-height: 1.7; margin: 0;">❝ Mon CTR est correct mais ma rétention chute — l'algo me pénalise. ❞</p>
         </div>
@@ -1521,7 +1636,7 @@
       </div>
 
       <!-- Row 6 -->
-      <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr;">
+      <div class="reveal" class="mirror-row" style="display: grid; grid-template-columns: 1fr 1fr;">
         <div style="padding: 36px 40px; border-right: 1px solid #1A1A1A;">
           <p style="font-size: 15px; font-style: italic; color: #888; line-height: 1.7; margin: 0;">❝ Je gère plusieurs chaînes. Le packaging me prend trop de temps. ❞</p>
         </div>

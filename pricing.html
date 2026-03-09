@@ -454,12 +454,60 @@
   body.annual .price-monthly { display: none; }
   body.annual .price-annual { display: inline; }
 
-  @media (max-width: 860px) {
-    nav { padding: 16px 24px; }
+  /* ═══════════════════════════════════════
+     RESPONSIVE — TABLETTE (max 1024px)
+  ═══════════════════════════════════════ */
+  @media (max-width: 1024px) {
+    .plans-grid { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
+  }
+
+  /* ═══════════════════════════════════════
+     RESPONSIVE — MOBILE (max 768px)
+  ═══════════════════════════════════════ */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
     .nav-links { display: none; }
-    .plans-grid { grid-template-columns: 1fr; padding: 0 16px; }
-    .reassurance { flex-direction: column; gap: 16px; }
-    .pricing-final-inner { padding: 36px 24px; }
+
+    .pricing-hero { padding: 120px 20px 48px; }
+    .pricing-hero h1 {
+      font-size: clamp(28px, 7vw, 42px);
+      letter-spacing: -1.5px;
+    }
+    .pricing-hero p { font-size: 15px; }
+
+    .toggle-wrap { flex-wrap: wrap; justify-content: center; }
+
+    .plans-grid {
+      grid-template-columns: 1fr;
+      padding: 0 16px;
+      max-width: 100%;
+    }
+
+    .plan-price span.price-monthly,
+    .plan-price span.price-annual { font-size: 64px !important; }
+    .plan-price > span:last-child { font-size: 18px !important; }
+
+    .plan-card { padding: 24px 24px 28px; }
+
+    .reassurance {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      margin: 0 16px 48px;
+      padding: 16px;
+    }
+
+    .faq-inner { padding: 0 4px; }
+    .faq-q { font-size: 14px; }
+
+    .pricing-final-inner { padding: 36px 20px; margin: 0 16px; }
+
+    footer {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+      padding: 28px 20px;
+    }
   }
 </style>
 </head>
