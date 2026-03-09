@@ -1710,19 +1710,78 @@ Le seul workflow conçu<br>pour faire cliquer.
         <div style="background:#111; padding:40px 36px;">
           <span style="display:inline-block; background:rgba(220,50,50,0.15); color:#f87171; font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:24px; font-family:var(--font-mono);">L'ANCIENNE MÉTHODE</span>
 
-          <!-- Tableau rouge -->
-          <div style="border:1px solid rgba(220,50,50,0.2); border-radius:10px; overflow:hidden; margin-bottom:24px; font-family:var(--font-mono); font-size:11px;">
-            <div style="display:flex; justify-content:space-between; padding:10px 14px; border-bottom:1px solid rgba(220,50,50,0.15); background:rgba(220,50,50,0.05);">
-              <span style="color:#666;">Temps passé sur la miniature</span>
-              <span style="color:#f87171; font-weight:700;">79€ et 0 donnée</span>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; border-bottom:1px solid rgba(220,50,50,0.15); background:rgba(220,50,50,0.03);">
-              <span style="color:#666;">Validation avant publication</span>
-              <span style="color:#f87171; font-style:italic;">"C’est joli. Ça va passer."</span>
-            </div>
-            <div style="display:flex; justify-content:space-between; padding:10px 14px; background:rgba(220,50,50,0.05);">
-              <span style="color:#666;">Feedback</span>
-              <span style="color:#f87171; font-weight:700;">3 semaines plus tard</span>
+          <!-- Mockup gauche tab2 -->
+          <div style="margin-bottom:28px; width:100%; aspect-ratio:16/9; position:relative; overflow:hidden; border-radius:12px; border:1px solid rgba(255,255,255,0.04); background:#111111; box-shadow:0 0 60px rgba(0,0,0,0.5); display:flex;">
+            <style>
+              .mg3b-mono{font-family:'JetBrains Mono',monospace;}
+              .mg3b-cursor{display:inline-block;width:2px;height:11px;background:#555;animation:mg3bBlink 1.2s infinite;vertical-align:middle;margin-left:2px;}
+              @keyframes mg3bBlink{0%,50%{opacity:1}51%,100%{opacity:0}}
+              .mg3b-struck{color:#3a3a3a;text-decoration:line-through;text-decoration-color:rgba(255,255,255,0.1);}
+              .mg3b-muted{color:#333;}
+              .mg3b-line{font-family:'JetBrains Mono',monospace;font-size:clamp(7px,1vw,10px);line-height:1.85;color:#555;}
+            </style>
+            <div style="position:absolute;inset:0;display:flex;">
+              <div style="flex:1.15;padding:4.5% 4%;display:flex;flex-direction:column;z-index:1;border-right:1px solid rgba(255,255,255,0.04);overflow:hidden;">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3%;">
+                  <span class="mg3b-mono" style="font-size:clamp(6px,0.85vw,8px);letter-spacing:2.5px;text-transform:uppercase;color:#3a3a3a;">Miniature en cours</span>
+                  <span class="mg3b-mono" style="font-size:clamp(7px,0.9vw,9px);color:#333;">23:51</span>
+                </div>
+                <div style="background:rgba(255,255,255,0.015);border:1px solid rgba(255,255,255,0.04);border-radius:8px;padding:3.5% 4%;flex:1;display:flex;flex-direction:column;overflow:hidden;">
+                  <div style="display:flex;align-items:center;gap:8px;padding-bottom:2.5%;border-bottom:1px solid rgba(255,255,255,0.04);margin-bottom:3%;flex-wrap:wrap;">
+                    <span class="mg3b-mono" style="font-size:clamp(9px,1.3vw,13px);font-weight:600;color:#555;">MINIATURE V1 — BROUILLON <span style="color:#F87171;opacity:0.6;">??</span></span>
+                    <span class="mg3b-mono" style="font-size:clamp(5px,0.7vw,7px);letter-spacing:1px;text-transform:uppercase;color:#F87171;background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.12);padding:2px 8px;border-radius:3px;opacity:0.7;">Non validée</span>
+                  </div>
+                  <div class="mg3b-line mg3b-struck">Ça ressemble à ce qui marche chez eux</div>
+                  <div class="mg3b-line mg3b-struck">Fond rouge + texte blanc, ça claque</div>
+                  <div class="mg3b-line mg3b-muted"><span style="color:#444;font-style:italic;">(trouver un angle différent...)</span></div>
+                  <div style="height:1px;background:rgba(255,255,255,0.03);margin:2% 0;"></div>
+                  <div class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);font-weight:600;color:#4a6d8c;letter-spacing:1px;text-transform:uppercase;margin-bottom:1%;">Texte overlay :</div>
+                  <div class="mg3b-line">"Ça va passer" ← titre répété</div>
+                  <div class="mg3b-line mg3b-muted"><span style="color:#4a6d8c;font-style:italic;opacity:0.7;">// trop générique, déjà vu</span></div>
+                  <div style="height:1px;background:rgba(255,255,255,0.03);margin:2% 0;"></div>
+                  <div class="mg3b-line mg3b-muted"><span style="color:#444;font-style:italic;">(visuel — photo stock ?)</span></div>
+                  <div class="mg3b-line mg3b-muted"><span style="color:#444;font-style:italic;">(couleurs — à définir)</span></div>
+                  <div class="mg3b-line mg3b-muted"><span style="color:#444;font-style:italic;">(composition — ???)</span></div>
+                  <div class="mg3b-line mg3b-muted" style="margin-top:2%;"><span style="color:#4a6d8c;font-style:italic;opacity:0.7;">// on publie demain matin</span><span class="mg3b-cursor"></span></div>
+                </div>
+              </div>
+              <div style="width:38%;padding:4.5% 3.5%;display:flex;flex-direction:column;z-index:1;overflow:hidden;">
+                <div class="mg3b-mono" style="font-size:clamp(6px,0.85vw,8px);letter-spacing:2.5px;text-transform:uppercase;color:#3a3a3a;margin-bottom:3%;">Validation</div>
+                <div style="background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.03);border-radius:8px;padding:4%;margin-bottom:3%;">
+                  <div class="mg3b-mono" style="font-size:clamp(5px,0.75vw,8px);letter-spacing:1.5px;text-transform:uppercase;color:#2a2a2a;margin-bottom:3%;">Score packaging</div>
+                  <div style="width:100%;aspect-ratio:16/9;background:#0a0a0a;border:1px dashed rgba(255,255,255,0.04);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:3%;">
+                    <div class="mg3b-mono" style="font-size:clamp(16px,2.5vw,28px);font-weight:700;color:#2a2a2a;">— /100</div>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:1.5% 0;border-bottom:1px solid rgba(255,255,255,0.015);">
+                    <span class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#2a2a2a;">Cohérence</span>
+                    <span class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#1e1e1e;">—</span>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:1.5% 0;border-bottom:1px solid rgba(255,255,255,0.015);">
+                    <span class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#2a2a2a;">Vide narratif</span>
+                    <span class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#1e1e1e;">—</span>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:1.5% 0;">
+                    <span class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#2a2a2a;">Redondance</span>
+                    <span class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#444;font-style:italic;">"à l’oeil"</span>
+                  </div>
+                </div>
+                <div style="background:rgba(248,113,113,0.03);border:1px solid rgba(248,113,113,0.06);border-radius:8px;padding:4%;margin-bottom:3%;">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:3%;">
+                    <div style="width:6px;height:6px;border-radius:50%;background:#F87171;opacity:0.25;flex-shrink:0;"></div>
+                    <span class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);letter-spacing:1px;text-transform:uppercase;color:#555;">Aucune validation</span>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:2px;">
+                    <div style="display:flex;align-items:center;gap:8px;"><span style="color:#F87171;opacity:0.35;font-size:clamp(7px,1vw,10px);width:10px;text-align:center;flex-shrink:0;">✕</span><span class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#3a3a3a;">Score → inconnu</span></div>
+                    <div style="padding-left:4px;"><div style="width:1px;height:5px;background:rgba(255,255,255,0.03);margin-left:4px;"></div></div>
+                    <div style="display:flex;align-items:center;gap:8px;"><span style="color:#F87171;opacity:0.35;font-size:clamp(7px,1vw,10px);width:10px;text-align:center;flex-shrink:0;">✕</span><span class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#3a3a3a;">Redondance → non détectée</span></div>
+                    <div style="padding-left:4px;"><div style="width:1px;height:5px;background:rgba(255,255,255,0.03);margin-left:4px;"></div></div>
+                    <div style="display:flex;align-items:center;gap:8px;"><span style="color:#F87171;opacity:0.35;font-size:clamp(7px,1vw,10px);width:10px;text-align:center;flex-shrink:0;">✕</span><span class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#3a3a3a;">Décision → au feeling</span></div>
+                  </div>
+                </div>
+                <div style="background:rgba(196,168,79,0.03);border:1px solid rgba(196,168,79,0.06);border-radius:8px;padding:3% 4%;margin-top:auto;">
+                  <div class="mg3b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#c4a84f;opacity:0.5;line-height:1.5;">On publie dans 8h.<br>La miniature n’a jamais été scorée.</div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1740,19 +1799,86 @@ Le seul workflow conçu<br>pour faire cliquer.
         <div style="background:#161616; padding:40px 36px;">
           <span style="display:inline-block; background:rgba(255,92,0,0.15); color:var(--orange); font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:24px; font-family:var(--font-mono); width:fit-content;">AVEC THUMBAI</span>
 
-          <!-- Tableau vert -->
-          <div style="border:1px solid rgba(34,197,94,0.2); border-radius:10px; overflow:hidden; margin-bottom:24px; font-family:var(--font-mono); font-size:11px;">
-            <div style="display:flex; justify-content:space-between; padding:10px 14px; border-bottom:1px solid rgba(34,197,94,0.15); background:rgba(34,197,94,0.05);">
-              <span style="color:#666;">Temps passé sur la miniature</span>
-              <span style="color:#22c55e; font-weight:700;">60 secondes · scorée</span>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; border-bottom:1px solid rgba(34,197,94,0.15); background:rgba(34,197,94,0.03);">
-              <span style="color:#666;">Validation avant publication</span>
-              <span style="color:#22c55e; font-weight:700;">score /100 · axes détaillés</span>
-            </div>
-            <div style="display:flex; justify-content:space-between; padding:10px 14px; background:rgba(34,197,94,0.05);">
-              <span style="color:#666;">Feedback</span>
-              <span style="color:#22c55e; font-weight:700;">immédiat + confirmé après</span>
+          <!-- Mockup droite tab2 -->
+          <div style="margin-bottom:28px; width:100%; aspect-ratio:16/9; position:relative; overflow:hidden; border-radius:12px; border:1px solid rgba(255,107,0,0.1); background:#111111; box-shadow:0 0 80px rgba(255,107,0,0.04); display:flex;">
+            <style>
+              .md2b-mono{font-family:'JetBrains Mono',monospace;}
+              .md2b-axis-bg{flex:1;height:4px;background:rgba(255,255,255,0.04);border-radius:2px;overflow:hidden;}
+              .md2b-sem-dot{width:6px;height:6px;border-radius:50%;background:#34D399;box-shadow:0 0 6px rgba(52,211,153,0.4);}
+              .md2b-connector{width:1px;height:8px;background:rgba(52,211,153,0.2);}
+            </style>
+            <div style="position:absolute;inset:0;display:flex;">
+              <div style="flex:1;padding:4% 3.5%;display:flex;flex-direction:column;gap:3%;z-index:1;border-right:1px solid rgba(255,255,255,0.04);overflow:hidden;">
+                <div class="md2b-mono" style="font-size:clamp(6px,0.85vw,8px);letter-spacing:2.5px;text-transform:uppercase;color:#555;">Ta miniature</div>
+                <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:3% 4%;flex:1;display:flex;flex-direction:column;gap:6px;">
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <div style="background:rgba(255,107,0,0.1);color:#FF6B00;width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;" class="md2b-mono">1</div>
+                    <span class="md2b-mono" style="font-size:clamp(6px,0.8vw,8px);letter-spacing:1.5px;text-transform:uppercase;color:#666;">Titre</span>
+                  </div>
+                  <div style="font-family:'DM Sans',sans-serif;font-size:clamp(9px,1.1vw,12px);color:#ccc;line-height:1.5;"><span style="background:rgba(255,255,255,0.06);color:transparent;border-radius:3px;padding:0 4px;">████████ ██████</span> — <span style="background:rgba(255,255,255,0.06);color:transparent;border-radius:3px;padding:0 4px;">████████████</span></div>
+                </div>
+                <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:3% 4%;flex:1;display:flex;flex-direction:column;gap:6px;">
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <div style="background:rgba(255,107,0,0.1);color:#FF6B00;width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;" class="md2b-mono">2</div>
+                    <span class="md2b-mono" style="font-size:clamp(6px,0.8vw,8px);letter-spacing:1.5px;text-transform:uppercase;color:#666;">Texte overlay</span>
+                  </div>
+                  <div style="font-family:'DM Sans',sans-serif;font-size:clamp(9px,1.1vw,12px);color:#ccc;line-height:1.5;"><span style="background:rgba(255,255,255,0.06);color:transparent;border-radius:3px;padding:0 4px;">██████ ████████</span> <span style="background:rgba(255,255,255,0.06);color:transparent;border-radius:3px;padding:0 4px;">██████</span></div>
+                </div>
+                <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:3% 4%;flex:1;display:flex;flex-direction:column;gap:6px;">
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <div style="background:rgba(255,107,0,0.1);color:#FF6B00;width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;" class="md2b-mono">3</div>
+                    <span class="md2b-mono" style="font-size:clamp(6px,0.8vw,8px);letter-spacing:1.5px;text-transform:uppercase;color:#666;">Visuel</span>
+                  </div>
+                  <div style="font-family:'DM Sans',sans-serif;font-size:clamp(9px,1.1vw,12px);color:#ccc;line-height:1.5;"><span style="background:rgba(255,255,255,0.06);color:transparent;border-radius:3px;padding:0 4px;">████████ ██████ ████</span></div>
+                </div>
+              </div>
+              <div style="width:44%;padding:4% 3.5%;display:flex;flex-direction:column;z-index:1;overflow:hidden;">
+                <div class="md2b-mono" style="font-size:clamp(6px,0.85vw,8px);letter-spacing:2.5px;text-transform:uppercase;color:#555;margin-bottom:4%;">Score miniature</div>
+                <div style="display:flex;align-items:center;gap:16px;margin-bottom:5%;">
+                  <div style="width:clamp(52px,7vw,72px);height:clamp(52px,7vw,72px);position:relative;flex-shrink:0;">
+                    <svg viewBox="0 0 64 64" style="width:100%;height:100%;transform:rotate(-90deg);">
+                      <circle cx="32" cy="32" r="30" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="4"/>
+                      <circle cx="32" cy="32" r="30" fill="none" stroke="#FF6B00" stroke-width="4" stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="25.6"/>
+                    </svg>
+                    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:clamp(14px,2vw,22px);font-weight:700;color:#FF6B00;">91<span style="font-size:clamp(8px,1vw,11px);font-weight:400;color:#555;margin-left:1px;">/100</span></div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:4px;">
+                    <div class="md2b-mono" style="font-size:clamp(7px,0.9vw,9px);color:#888;">Miniature validée</div>
+                    <div class="md2b-mono" style="font-size:clamp(6px,0.8vw,8px);color:#555;">Prête à publier</div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:3%;margin-bottom:5%;">
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <div class="md2b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#888;width:100px;flex-shrink:0;">Vide narratif</div>
+                    <div class="md2b-axis-bg"><div style="height:100%;width:93%;background:#34D399;border-radius:2px;"></div></div>
+                    <div class="md2b-mono" style="font-size:clamp(6px,0.85vw,9px);font-weight:600;color:#34D399;width:28px;text-align:right;">93</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <div class="md2b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#888;width:100px;flex-shrink:0;">Cohérence</div>
+                    <div class="md2b-axis-bg"><div style="height:100%;width:89%;background:#34D399;border-radius:2px;"></div></div>
+                    <div class="md2b-mono" style="font-size:clamp(6px,0.85vw,9px);font-weight:600;color:#34D399;width:28px;text-align:right;">89</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <div class="md2b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#888;width:100px;flex-shrink:0;">Redondance</div>
+                    <div class="md2b-axis-bg"><div style="height:100%;width:91%;background:#FF6B00;border-radius:2px;"></div></div>
+                    <div class="md2b-mono" style="font-size:clamp(6px,0.85vw,9px);font-weight:600;color:#FF6B00;width:28px;text-align:right;">0%</div>
+                  </div>
+                </div>
+                <div style="background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.12);border-radius:8px;padding:4% 4%;margin-bottom:4%;">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:3%;">
+                    <div class="md2b-sem-dot"></div>
+                    <div class="md2b-mono" style="font-size:clamp(6px,0.85vw,9px);letter-spacing:1px;text-transform:uppercase;color:#34D399;">Cohérence confirmée</div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:4px;">
+                    <div style="display:flex;align-items:center;gap:8px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span class="md2b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#888;">Miniature → complète le titre</span></div>
+                    <div style="display:flex;justify-content:center;padding:2px 0;"><div class="md2b-connector"></div></div>
+                    <div style="display:flex;align-items:center;gap:8px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span class="md2b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#888;">Overlay → ne répète pas</span></div>
+                    <div style="display:flex;justify-content:center;padding:2px 0;"><div class="md2b-connector"></div></div>
+                    <div style="display:flex;align-items:center;gap:8px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span class="md2b-mono" style="font-size:clamp(6px,0.85vw,9px);color:#888;">Résultat → visible sans tout révéler</span></div>
+                  </div>
+                </div>
+                <div style="margin-top:auto;display:flex;align-items:center;justify-content:center;padding:3% 4%;border:1px solid rgba(255,107,0,0.25);border-radius:6px;background:rgba(255,107,0,0.06);font-family:'JetBrains Mono',monospace;font-size:clamp(8px,1vw,12px);font-weight:500;color:#FF6B00;letter-spacing:0.5px;">Tu peux publier.</div>
+              </div>
             </div>
           </div>
 
