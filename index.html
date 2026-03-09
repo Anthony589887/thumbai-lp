@@ -1469,46 +1469,23 @@ Le seul workflow conçu<br>pour faire cliquer.
             <div style="font-size:13px; color:var(--text-2); line-height:1.65; margin-top:8px; font-weight:600; font-style:italic; color:#888;">"Tu penses être prêt alors que tu n'as pas encore commencé."</div>
           </div>
         </div>
-        <!-- Droite -->
-        <div style="background:#161616; padding:40px 36px;">
-          <span style="display:inline-block; background:rgba(255,92,0,0.15); color:var(--orange); font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:24px; font-family:var(--font-mono);">AVEC THUMBAI</span>
+        <!-- Droite — ThumbAI Demo -->
+        <div style="background:#0A0A0A; padding:0; display:flex; flex-direction:column;">
+          <div id="thumbai-demo" style="width:100%; height:100%; display:flex; flex-direction:column; font-family:'DM Sans','Inter',system-ui,sans-serif;">
 
-          <!-- Mock UI -->
-          <div style="background:#0A0A0A; border:1px solid #1A1A1A; border-radius:12px; padding:20px; margin-bottom:28px; font-family:var(--font-mono); font-size:12px; color:var(--text-3); line-height:1.8;">
-            <div style="margin-bottom:6px;">Input : <span style="color:var(--text-2); font-style:italic;">"Mon idée — vivre sans budget depuis 3 ans"</span></div>
-            <div style="margin-bottom:10px; color:#555;">Titre initial : "Comment j'optimise mon budget — mes 5 règles"<br><span style="color:#f87171;">Score : 38/100 · format descriptif · tension absente</span></div>
-
-            <div style="background:rgba(255,92,0,0.08); border:1px solid rgba(255,92,0,0.2); border-radius:8px; padding:10px 12px; margin-bottom:12px;">
-              <div style="color:var(--orange); font-size:11px; margin-bottom:6px;">Meilleure alternative sélectionnée</div>
-              <div style="color:var(--text); font-size:12px; line-height:1.6;">→ "Je vivais sans budget depuis 3 ans.<br>&nbsp;&nbsp;&nbsp;Voilà ce que ça m'a vraiment coûté."</div>
-              <div style="color:var(--orange); font-weight:700; margin-top:4px;">86/100 ✓</div>
+            <!-- Top bar -->
+            <div style="flex-shrink:0; display:flex; align-items:center; padding:10px 20px; background:#111; border-bottom:1px solid #1F1F1F; gap:16px;">
+              <div style="display:flex; align-items:center; gap:7px; flex-shrink:0;">
+                <div style="width:18px; height:18px; background:#FF5C00; border-radius:4px;"></div>
+                <span style="font-weight:800; font-size:13px; color:#fff;">ThumbAI</span>
+              </div>
+              <div style="flex:1; display:flex; justify-content:center;" id="demo-stepper"></div>
+              <div style="background:rgba(255,92,0,0.10); border:1px solid rgba(255,92,0,0.20); border-radius:100px; padding:3px 10px; font-size:10px; font-weight:700; color:#FF5C00; flex-shrink:0;">DEMO</div>
             </div>
 
-            <div style="border-top:1px solid #1A1A1A; padding-top:12px;">
-              <div style="color:var(--orange); font-size:11px; margin-bottom:6px;">Brief miniature généré</div>
-              <div style="color:#888; font-size:11px; line-height:1.7;">Acte 3 à montrer : le chiffre réel affiché en grand.<br>Shot à capturer : réaction face caméra à la révélation.</div>
-              <div style="color:#4ade80; font-size:11px; margin-top:8px; font-weight:600;">→ "Tu peux filmer maintenant."</div>
-            </div>
+            <!-- Scrollable content -->
+            <div id="demo-content" style="flex:1; overflow-y:auto; padding:22px 28px; scrollbar-width:none;"></div>
           </div>
-
-          <!-- Liste ✅ -->
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;<strong style="color:var(--text);">Titre fort validé</strong> avant d'allumer la caméra. Tu sais exactement ce que tu promets.</div>
-            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;<strong style="color:var(--text);">Brief miniature généré</strong> avant le tournage. Tu sais quel shot capturer pour l'Acte 3.</div>
-            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;Tu filmes vers ton packaging. Chaque scène construit le vide narratif déjà créé.</div>
-            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;Le shot de révélation est dans les rushes. Parce que tu savais qu'il fallait le filmer.</div>
-            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;Au montage : tu sais où tu vas. La miniature est déjà pensée.</div>
-          </div>
-
-          <!-- Badge résultat -->
-          <div style="background:rgba(255,92,0,0.08); border:1px solid rgba(255,92,0,0.15); border-radius:10px; padding:14px 16px; margin-top:20px; font-family:var(--font-mono); font-size:11px;">
-            <div style="display:flex; justify-content:space-between; margin-bottom:4px;"><span style="color:#666;">Titre</span><span style="color:var(--orange); font-weight:700;">86/100</span></div>
-            <div style="display:flex; justify-content:space-between; margin-bottom:4px;"><span style="color:#666;">Brief miniature</span><span style="color:#4ade80;">prêt</span></div>
-            <div style="display:flex; justify-content:space-between; margin-bottom:8px;"><span style="color:#666;">Temps investi</span><span style="color:var(--orange);">4 minutes</span></div>
-            <div style="color:var(--text-3); font-style:italic;">Avant d'appuyer sur REC.</div>
-          </div>
-
-          <div style="font-size:13px; color:var(--text); line-height:1.65; margin-top:20px; font-weight:600; font-style:italic;">Tu construis le packaging. Tu filmes pour le tenir.</div>
         </div>
       </div>
 
@@ -2125,6 +2102,294 @@ function submitWaitlist() {
   btn.style.color = 'var(--text-2)';
   btn.disabled = true;
 }
+</script>
+
+
+<style>
+  @keyframes thumbaiDemoFadeIn {
+    from { opacity:0; transform:translateY(6px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .tda { animation: thumbaiDemoFadeIn 180ms ease forwards; }
+  #demo-content::-webkit-scrollbar { display:none; }
+</style>
+
+<script>
+(function() {
+  var API = 'https://thumbai-tan.vercel.app';
+  var state = { step: 0, titre: '', desc: '', titreValide: '', hookResult: null, scResult: null };
+
+  var C = {
+    bg:'#0A0A0A', surface:'#111111', raised:'#171717', border:'#1F1F1F',
+    borderLight:'#2A2A2A', orange:'#FF5C00', orangeDim:'rgba(255,92,0,0.10)',
+    orangeBorder:'rgba(255,92,0,0.20)', white:'#FFFFFF',
+    w80:'rgba(255,255,255,0.80)', w50:'rgba(255,255,255,0.50)',
+    w30:'rgba(255,255,255,0.30)', w25:'rgba(255,255,255,0.25)',
+    green:'#22C55E', greenDim:'rgba(34,197,94,0.08)', greenBorder:'rgba(34,197,94,0.20)',
+    amber:'#F59E0B', amberDim:'rgba(245,158,11,0.08)', amberBorder:'rgba(245,158,11,0.20)',
+    red:'#EF4444', redDim:'rgba(239,68,68,0.08)', redBorder:'rgba(239,68,68,0.20)',
+  };
+
+  var STEP_LABELS = ['Titre', 'Hook Analyzer', 'Semantic Check'];
+  var DEMO_PROFILE = { niche: 'Finance personnelle', format_contenu: 'challenge' };
+
+  function renderStepper() {
+    var el = document.getElementById('demo-stepper');
+    if (!el) return;
+    var html = '<div style="display:flex;align-items:center;">';
+    STEP_LABELS.forEach(function(label, i) {
+      var active = state.step === i, done = i < state.step;
+      html += '<div style="display:flex;align-items:center;">';
+      html += '<div style="display:flex;align-items:center;gap:5px;padding:4px 9px;border-radius:100px;' +
+        'background:' + (active ? C.orangeDim : 'transparent') + ';' +
+        'color:' + (active ? C.orange : done ? C.w50 : C.w25) + ';' +
+        'font-weight:' + (active ? '700' : '500') + ';font-size:11px;white-space:nowrap;">' +
+        '<div style="width:16px;height:16px;border-radius:50%;flex-shrink:0;font-size:8px;font-weight:700;' +
+        'display:flex;align-items:center;justify-content:center;' +
+        'background:' + (i <= state.step ? C.orange : C.borderLight) + ';' +
+        'color:' + (i <= state.step ? C.white : C.w50) + ';">' +
+        (done ? '✓' : i+1) + '</div>' + label + '</div>';
+      if (i < 2) html += '<div style="width:14px;height:1px;background:' + (done ? C.orange : C.border) + ';"></div>';
+      html += '</div>';
+    });
+    html += '</div>';
+    el.innerHTML = html;
+  }
+
+  function scoreBadge(label, value) {
+    if (value === undefined || value === null) return '';
+    var isGreen = value >= 70, isAmber = value >= 50 && value < 70;
+    var bg = isGreen ? C.greenDim : isAmber ? C.amberDim : C.redDim;
+    var color = isGreen ? C.green : isAmber ? C.amber : C.red;
+    var border = isGreen ? C.greenBorder : isAmber ? C.amberBorder : C.redBorder;
+    return '<div style="flex:1;background:'+bg+';border:1px solid '+border+';border-radius:10px;padding:10px 0;text-align:center;min-width:0;">' +
+      '<div style="font-size:22px;font-weight:900;color:'+color+';line-height:1;">'+value+'</div>' +
+      '<div style="font-size:10px;color:'+C.w50+';margin-top:3px;">'+label+' /100</div></div>';
+  }
+
+  function progressLoader(emoji, label, seconds) {
+    return '<div style="background:'+C.surface+';border:1px solid '+C.border+';border-radius:14px;overflow:hidden;">' +
+      '<div style="height:3px;background:'+C.border+';">' +
+      '<div id="demo-progress-bar" style="height:100%;width:0%;background:'+C.orange+';transition:width '+seconds+'s linear;border-radius:2px;"></div></div>' +
+      '<div style="text-align:center;padding:28px 0;">' +
+      '<div style="font-size:24px;margin-bottom:8px;">'+emoji+'</div>' +
+      '<div style="font-weight:700;color:'+C.white+';font-size:13px;">'+label+'</div>' +
+      '<div id="demo-countdown" style="font-size:11px;color:'+C.w50+';margin-top:4px;">Prêt dans '+seconds+'s</div></div></div>';
+  }
+
+  function startProgress(seconds) {
+    setTimeout(function() {
+      var bar = document.getElementById('demo-progress-bar');
+      if (bar) bar.style.width = '95%';
+    }, 50);
+    var count = seconds;
+    var iv = setInterval(function() {
+      count = Math.max(1, count - 1);
+      var el = document.getElementById('demo-countdown');
+      if (el) el.textContent = 'Prêt dans ' + count + 's';
+      else clearInterval(iv);
+    }, 1000);
+    return iv;
+  }
+
+  function renderStep1() {
+    return '<div class="tda" style="display:flex;flex-direction:column;gap:16px;">' +
+      '<div><div style="font-size:19px;font-weight:800;color:'+C.white+';margin-bottom:3px;">Ton titre + ton contenu</div>' +
+      '<div style="font-size:12px;color:'+C.w50+';">Le Hook Analyzer va optimiser ton titre. La description active le Semantic Check.</div></div>' +
+      '<div><label style="font-size:11px;font-weight:700;color:'+C.w80+';display:block;margin-bottom:6px;letter-spacing:0.05em;text-transform:uppercase;">Titre de ta vidéo</label>' +
+      '<input id="demo-titre" type="text" placeholder="Ex: J'ai investi 10 000€ en bourse pendant 1 an..." value="'+escHtml(state.titre)+'" ' +
+      'style="width:100%;background:#1F1F1F;color:'+C.white+';border:1px solid '+C.borderLight+';border-radius:10px;padding:10px 12px;font-size:14px;font-weight:600;font-family:inherit;outline:none;box-sizing:border-box;"></div>' +
+      '<div><label style="font-size:11px;font-weight:700;color:'+C.w80+';display:block;margin-bottom:6px;letter-spacing:0.05em;text-transform:uppercase;">Ce que ta vidéo va vraiment couvrir</label>' +
+      '<textarea id="demo-desc" rows="4" placeholder="Décris ce que tu vas vraiment montrer dans la vidéo — 2-3 phrases suffisent." ' +
+      'style="width:100%;background:#1F1F1F;color:'+C.white+';border:1px solid '+C.borderLight+';border-radius:10px;padding:10px 12px;font-size:13px;font-family:inherit;outline:none;box-sizing:border-box;resize:none;">'+escHtml(state.desc)+'</textarea>' +
+      '<div id="demo-desc-counter" style="font-size:11px;margin-top:4px;color:'+( state.desc.length >= 80 ? C.green : C.w30)+';">' +
+      (state.desc.length < 80 ? state.desc.length+'/80 caractères minimum — '+(80-state.desc.length)+' restants' : '✓ '+state.desc.length+' caractères') + '</div></div>' +
+      '<button id="demo-submit-1" style="background:'+(state.titre.trim() && state.desc.length>=80 ? C.orange : C.borderLight)+';color:'+(state.titre.trim() && state.desc.length>=80 ? C.white : C.w25)+';border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:700;cursor:'+(state.titre.trim() && state.desc.length>=80 ? 'pointer' : 'not-allowed')+';font-family:inherit;">Analyser mon titre →</button>' +
+      '</div>';
+  }
+
+  function renderStep2(result) {
+    var alts = result && result.alternatives ? result.alternatives : [];
+    var scores = result && result.scores_titre ? result.scores_titre : null;
+    var html = '<div class="tda" style="display:flex;flex-direction:column;gap:12px;">' +
+      '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">' +
+      '<div><div style="font-size:16px;font-weight:800;color:'+C.white+';">Hook Analyzer</div>' +
+      '<div style="font-size:11px;color:'+C.w50+';margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">&ldquo;'+escHtml(state.titre)+'&rdquo;</div></div>' +
+      '<button onclick="demoBack()" style="background:transparent;color:'+C.w50+';border:1px solid '+C.borderLight+';border-radius:7px;padding:5px 10px;font-size:11px;cursor:pointer;font-family:inherit;">← Retour</button></div>';
+    if (scores) {
+      html += '<div style="display:flex;gap:8px;">' +
+        scoreBadge('Intrigue', scores.intrigue_score) +
+        scoreBadge('Vide narratif', scores.vide_narratif_score) +
+        scoreBadge('Score global', scores.score_global) + '</div>';
+    }
+    if (alts.length > 0) {
+      html += '<div><div style="font-size:12px;font-weight:700;color:'+C.w80+';margin-bottom:8px;">5 alternatives — choisis ton titre validé :</div><div style="display:flex;flex-direction:column;gap:6px;">';
+      alts.forEach(function(alt, i) {
+        var sel = state.titreValide === alt.titre;
+        html += '<div onclick="demoSelectAlt(''+escAttr(alt.titre)+'')" style="padding:10px 12px;border-radius:10px;border:2px solid '+(sel ? C.orange : C.borderLight)+';background:'+(sel ? C.orangeDim : C.raised)+';cursor:pointer;">' +
+          '<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><span style="font-size:9px;font-weight:700;background:'+C.orange+';color:'+C.white+';border-radius:100px;padding:2px 7px;">'+(alt.type || 'ALT-'+(i+1))+'</span></div>' +
+          '<div style="font-size:13px;font-weight:600;color:'+C.white+';line-height:1.4;word-break:break-word;">'+escHtml(alt.titre)+'</div>' +
+          (alt.correction_ciblee ? '<div style="font-size:10px;color:'+C.w50+';margin-top:3px;">🎯 '+escHtml(alt.correction_ciblee)+'</div>' : '') +
+          '</div>';
+      });
+      html += '</div></div>';
+    }
+    html += '<button onclick="demoValidateTitre()" style="background:'+(state.titreValide.trim() ? C.orange : C.borderLight)+';color:'+(state.titreValide.trim() ? C.white : C.w25)+';border:none;border-radius:10px;padding:11px;font-size:13px;font-weight:700;cursor:'+(state.titreValide.trim() ? 'pointer' : 'not-allowed')+';font-family:inherit;">Valider ce titre →</button>';
+    html += '</div>';
+    return html;
+  }
+
+  function renderStep3(result) {
+    var html = '<div class="tda" style="display:flex;flex-direction:column;gap:12px;">' +
+      '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">' +
+      '<div><div style="font-size:16px;font-weight:800;color:'+C.white+';">Semantic Check</div>' +
+      '<div style="font-size:11px;color:'+C.w50+';margin-top:2px;">Cohérence titre ↔ contenu réel</div></div>' +
+      '<button onclick="demoBackTo1()" style="background:transparent;color:'+C.w50+';border:1px solid '+C.borderLight+';border-radius:7px;padding:5px 10px;font-size:11px;cursor:pointer;font-family:inherit;">← Retour</button></div>' +
+      '<div style="background:'+C.raised+';border-radius:10px;padding:10px 12px;border:1px solid '+C.border+';">' +
+      '<span style="font-weight:600;color:'+C.w50+';font-size:11px;">Titre validé : </span>' +
+      '<span style="font-size:13px;color:'+C.w80+';word-break:break-word;">'+escHtml(state.titreValide)+'</span></div>';
+
+    if (!result) return html + '</div>';
+
+    if (result.niveau === 'coherent') {
+      html += '<div style="background:'+C.greenDim+';border:1px solid '+C.greenBorder+';border-radius:14px;padding:28px 20px;text-align:center;">' +
+        '<div style="font-size:30px;margin-bottom:8px;">✅</div>' +
+        '<div style="font-weight:700;color:'+C.green+';font-size:16px;">Cohérence validée</div>' +
+        (result.semantic_coherence_score ? '<div style="font-size:30px;font-weight:900;color:'+C.green+';margin-top:6px;line-height:1;">'+result.semantic_coherence_score+'/100</div>' : '') +
+        (result.verdict ? '<div style="font-size:12px;color:rgba(34,197,94,0.65);margin-top:8px;line-height:1.5;">'+escHtml(result.verdict)+'</div>' : '') +
+        '</div>' +
+        '<button onclick="demoRestart()" style="background:transparent;color:'+C.w50+';border:1px solid '+C.borderLight+';border-radius:10px;padding:10px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;">Analyser un autre titre →</button>';
+    } else if (result.niveau === 'tension') {
+      html += '<div style="background:'+C.amberDim+';border:1px solid '+C.amberBorder+';border-radius:14px;padding:16px 18px;">' +
+        '<div style="font-weight:700;color:'+C.amber+';margin-bottom:6px;font-size:14px;">⚠️ Tension sémantique détectée</div>' +
+        '<div style="font-size:12px;color:rgba(245,158,11,0.85);margin-bottom:10px;line-height:1.5;">'+escHtml(result.verdict)+'</div>' +
+        (result.action_corrective ? '<div style="font-size:12px;background:rgba(245,158,11,0.10);border-radius:8px;padding:8px 10px;color:rgba(245,158,11,0.85);border:1px solid rgba(245,158,11,0.15);margin-bottom:12px;">💡 '+escHtml(result.action_corrective)+'</div>' : '') +
+        '<div style="display:flex;gap:8px;"><button onclick="demoBackTo1()" style="flex:1;background:transparent;color:'+C.w50+';border:1px solid '+C.borderLight+';border-radius:8px;padding:9px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;">Corriger le titre</button>' +
+        '<button onclick="demoRestart()" style="flex:1;background:'+C.orange+';color:'+C.white+';border:none;border-radius:8px;padding:9px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;">Continuer →</button></div></div>';
+    } else if (result.niveau === 'mismatch') {
+      html += '<div style="background:'+C.redDim+';border:1px solid '+C.redBorder+';border-radius:14px;padding:16px 18px;">' +
+        '<div style="font-weight:700;color:'+C.red+';margin-bottom:6px;font-size:14px;">🚨 Mismatch sémantique</div>' +
+        '<div style="font-size:12px;color:rgba(239,68,68,0.85);margin-bottom:10px;line-height:1.5;">'+escHtml(result.verdict)+'</div>' +
+        (result.action_corrective ? '<div style="font-size:12px;background:rgba(239,68,68,0.10);border-radius:8px;padding:8px 10px;color:rgba(239,68,68,0.85);border:1px solid rgba(239,68,68,0.15);margin-bottom:12px;">💡 '+escHtml(result.action_corrective)+'</div>' : '') +
+        '<div style="display:flex;gap:8px;"><button onclick="demoBackTo1()" style="flex:1;background:transparent;color:'+C.w50+';border:1px solid '+C.borderLight+';border-radius:8px;padding:9px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;">Corriger le titre</button>' +
+        '<button onclick="demoRestart()" style="flex:1;background:'+C.orange+';color:'+C.white+';border:none;border-radius:8px;padding:9px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;">Recommencer →</button></div></div>';
+    }
+    html += '</div>';
+    return html;
+  }
+
+  function escHtml(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function escAttr(s) { return (s||'').replace(/'/g, '\x27'); }
+
+  function render() {
+    renderStepper();
+    var content = document.getElementById('demo-content');
+    if (!content) return;
+    if (state.step === 0) {
+      content.innerHTML = renderStep1();
+      bindStep1();
+    } else if (state.step === 1) {
+      if (state.hookResult) {
+        content.innerHTML = renderStep2(state.hookResult);
+      } else {
+        content.innerHTML = progressLoader('🧠', 'Analyse en cours...', 12);
+        var iv = startProgress(12);
+        fetch(API + '/api/hook-analyzer', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ titre: state.titre, description_contenu: state.desc, creator_profile: DEMO_PROFILE })
+        }).then(function(r){ return r.json(); }).then(function(data) {
+          clearInterval(iv);
+          state.hookResult = data;
+          if (!state.titreValide && data.alternatives && data.alternatives[0]) state.titreValide = data.alternatives[0].titre;
+          content.innerHTML = renderStep2(data);
+        }).catch(function() {
+          clearInterval(iv);
+          content.innerHTML = '<div style="color:'+C.red+';padding:20px;">Erreur lors de l'analyse. <button onclick="demoBack()" style="color:'+C.orange+';background:none;border:none;cursor:pointer;">Réessayer</button></div>';
+        });
+      }
+    } else if (state.step === 2) {
+      if (state.scResult) {
+        content.innerHTML = renderStep3(state.scResult);
+      } else {
+        content.innerHTML = progressLoader('🔍', 'Analyse de cohérence...', 8);
+        var iv2 = startProgress(8);
+        fetch(API + '/api/semantic-check', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ titre_valide: state.titreValide, description_contenu: state.desc, creator_profile: DEMO_PROFILE })
+        }).then(function(r){ return r.json(); }).then(function(data) {
+          clearInterval(iv2);
+          state.scResult = data;
+          content.innerHTML = renderStep3(data);
+        }).catch(function() {
+          clearInterval(iv2);
+          content.innerHTML = renderStep3(null);
+        });
+      }
+    }
+  }
+
+  function bindStep1() {
+    var titreEl = document.getElementById('demo-titre');
+    var descEl  = document.getElementById('demo-desc');
+    var btn     = document.getElementById('demo-submit-1');
+    var counter = document.getElementById('demo-desc-counter');
+
+    function updateBtn() {
+      var ok = titreEl.value.trim() && descEl.value.length >= 80;
+      btn.style.background = ok ? C.orange : C.borderLight;
+      btn.style.color      = ok ? C.white  : C.w25;
+      btn.style.cursor     = ok ? 'pointer' : 'not-allowed';
+    }
+
+    titreEl.addEventListener('input', function() { state.titre = titreEl.value; updateBtn(); });
+    descEl.addEventListener('input', function() {
+      state.desc = descEl.value;
+      var len = descEl.value.length;
+      counter.style.color = len >= 80 ? C.green : C.w30;
+      counter.textContent = len < 80 ? len+'/80 caractères minimum — '+(80-len)+' restants' : '✓ '+len+' caractères';
+      updateBtn();
+    });
+
+    [titreEl, descEl].forEach(function(el) {
+      el.addEventListener('focus', function() { el.style.borderColor = C.orange; });
+      el.addEventListener('blur',  function() { el.style.borderColor = C.borderLight; });
+    });
+
+    btn.addEventListener('click', function() {
+      if (!titreEl.value.trim() || descEl.value.length < 80) return;
+      state.titre = titreEl.value;
+      state.desc  = descEl.value;
+      state.hookResult = null;
+      state.step = 1;
+      render();
+    });
+  }
+
+  window.demoBack = function() { state.step = 0; render(); };
+  window.demoBackTo1 = function() { state.step = 1; render(); };
+  window.demoRestart = function() {
+    state.step = 0; state.titre = ''; state.desc = '';
+    state.titreValide = ''; state.hookResult = null; state.scResult = null;
+    render();
+  };
+  window.demoSelectAlt = function(titre) {
+    state.titreValide = titre;
+    var content = document.getElementById('demo-content');
+    if (content) content.innerHTML = renderStep2(state.hookResult);
+  };
+  window.demoValidateTitre = function() {
+    if (!state.titreValide.trim()) return;
+    state.scResult = null;
+    state.step = 2;
+    render();
+  };
+
+  // Init
+  document.addEventListener('DOMContentLoaded', function() { render(); });
+  if (document.readyState !== 'loading') render();
+})();
 </script>
 
 </body>
