@@ -1207,6 +1207,29 @@
     .step-card + .step-card { border-left: none; border-top: 1px solid var(--border); }
   }
 
+
+  /* KPI full width sur mobile */
+  .kpi-full { grid-column: 1 / -1; }
+
+  /* Galerie 2 col sur mobile */
+  @media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+
+    /* Badge — point à l'intérieur uniquement */
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; }
+
+    /* Video footer wrap */
+    .hero-video-footer { flex-wrap: wrap; gap: 10px; padding: 12px 14px; }
+    .video-footer-left { flex: 1; min-width: 0; }
+    .video-footer-title { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .video-footer-right { width: 100%; justify-content: flex-start; gap: 20px; }
+
+    /* KPI grid — 2 col + impressions pleine largeur */
+    .kpi-row { grid-template-columns: 1fr 1fr; }
+    .kpi-full { grid-column: 1 / -1; }
+    .kpi-box-val { font-size: 20px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1238,7 +1261,7 @@
 
   <span class="hero-badge">
     <span class="hero-badge-dot"></span>
-    • La méthode des créateurs à 1M+, accessible à tous
+    La méthode des créateurs à 1M+, accessible à tous
   </span>
 
   <h1 class="hero-title">
@@ -1575,7 +1598,7 @@
       <p class="section-sub">Chaque miniature est construite depuis ton titre, ta niche, ton brief.</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+    <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
 
       <!-- Miniature 1 -->
       <div class="reveal" style="display:flex; flex-direction:column; gap:12px;">
