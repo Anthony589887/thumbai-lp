@@ -1470,21 +1470,80 @@ Le seul workflow conçu<br>pour faire cliquer.
           </div>
         </div>
         <!-- Droite — ThumbAI Demo -->
-        <div style="background:#0A0A0A; padding:0; display:flex; flex-direction:column;">
-          <div id="thumbai-demo" style="width:100%; min-height:520px; display:flex; flex-direction:column; font-family:'DM Sans','Inter',system-ui,sans-serif;">
+        <div style="background:#0A0A0A; padding:32px 28px; display:flex; align-items:flex-start;">
+          <div id="tad-root" style="width:100%; background:#0A0A0A; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); box-shadow:0 0 80px rgba(255,92,0,0.07); display:flex; flex-direction:column; font-family:'DM Sans','Inter',system-ui,sans-serif;">
 
-            <!-- Top bar -->
-            <div style="flex-shrink:0; display:flex; align-items:center; padding:10px 20px; background:#111; border-bottom:1px solid #1F1F1F; gap:16px;">
-              <div style="display:flex; align-items:center; gap:7px; flex-shrink:0;">
-                <div style="width:18px; height:18px; background:#FF5C00; border-radius:4px;"></div>
-                <span style="font-weight:800; font-size:13px; color:#fff;">ThumbAI</span>
+            <!-- Header -->
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 16px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);flex-shrink:0;">
+              <div style="display:flex;align-items:center;gap:7px;">
+                <div style="width:20px;height:20px;background:#FF5C00;border-radius:4px;"></div>
+                <span style="font-weight:800;color:#fff;font-size:13px;letter-spacing:-0.02em;">Thumb<span style="color:#FF5C00;">AI</span></span>
               </div>
-              <div style="flex:1; display:flex; justify-content:center;" id="demo-stepper"></div>
-              <div style="background:rgba(255,92,0,0.10); border:1px solid rgba(255,92,0,0.20); border-radius:100px; padding:3px 10px; font-size:10px; font-weight:700; color:#FF5C00; flex-shrink:0;">DEMO</div>
+              <div style="display:flex;align-items:center;gap:3px;font-size:9.5px;font-weight:600;">
+                <div style="display:flex;align-items:center;gap:4px;color:rgba(255,255,255,0.45);">
+                  <div style="width:15px;height:15px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:7px;color:inherit;font-weight:800;">✓</div>Titre</div>
+                <span style="color:rgba(255,255,255,0.1);">—</span>
+                <div style="display:flex;align-items:center;gap:4px;color:#FF5C00;">
+                  <div style="width:15px;height:15px;border-radius:50%;background:#FF5C00;display:flex;align-items:center;justify-content:center;font-size:7px;color:#fff;font-weight:800;">2</div>Hook</div>
+                <span style="color:rgba(255,255,255,0.1);">—</span>
+                <div style="display:flex;align-items:center;gap:4px;color:rgba(255,255,255,0.18);">
+                  <div style="width:15px;height:15px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;">3</div>Cohérence</div>
+                <span style="color:rgba(255,255,255,0.1);">—</span>
+                <div style="display:flex;align-items:center;gap:4px;color:rgba(255,255,255,0.18);">
+                  <div style="width:15px;height:15px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;">4</div>Génération</div>
+                <span style="color:rgba(255,255,255,0.1);">—</span>
+                <div style="display:flex;align-items:center;gap:4px;color:rgba(255,255,255,0.18);">
+                  <div style="width:15px;height:15px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;">5</div>Score</div>
+              </div>
+              <div id="tad-live" style="font-size:8.5px;font-weight:700;color:#FF5C00;letter-spacing:.1em;border:1px solid rgba(255,92,0,0.3);border-radius:20px;padding:2px 9px;">LIVE</div>
             </div>
 
-            <!-- Scrollable content -->
-            <div id="demo-content" style="flex:1; min-height:400px; overflow-y:auto; padding:22px 28px; scrollbar-width:none;"></div>
+            <!-- Body -->
+            <div style="flex:1;overflow-y:auto;padding:11px 16px;scrollbar-width:none;">
+
+              <!-- Titre original -->
+              <div style="background:rgba(255,255,255,0.03);border-radius:7px;padding:7px 11px;margin-bottom:9px;border:1px solid rgba(255,255,255,0.06);">
+                <div style="font-size:8.5px;color:rgba(255,255,255,0.28);font-weight:700;letter-spacing:.1em;margin-bottom:3px;">TON TITRE</div>
+                <div style="font-size:11.5px;color:rgba(255,255,255,0.5);font-style:italic;">Ce que j'aurais aimé savoir quand j'ai débuté la guitare</div>
+              </div>
+
+              <!-- Scores -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:11px;">
+                <div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.14);border-radius:7px;padding:9px 11px;text-align:center;">
+                  <div style="font-size:28px;font-weight:800;color:#ef4444;line-height:1;">12</div>
+                  <div style="font-size:8.5px;color:rgba(255,255,255,0.28);margin-top:3px;">Intrigue /100</div>
+                </div>
+                <div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.14);border-radius:7px;padding:9px 11px;text-align:center;">
+                  <div style="font-size:28px;font-weight:800;color:#ef4444;line-height:1;">18</div>
+                  <div style="font-size:8.5px;color:rgba(255,255,255,0.28);margin-top:3px;">Vide narratif /100</div>
+                </div>
+              </div>
+
+              <!-- Separator -->
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
+                <div style="flex:1;height:1px;background:rgba(255,255,255,0.06);"></div>
+                <span style="font-size:8.5px;font-weight:700;color:rgba(255,255,255,0.22);letter-spacing:.08em;white-space:nowrap;">5 ALTERNATIVES — CHOISIS TON TITRE VALIDÉ</span>
+                <div style="flex:1;height:1px;background:rgba(255,255,255,0.06);"></div>
+              </div>
+
+              <!-- Alternatives container -->
+              <div id="tad-alts" style="display:flex;flex-direction:column;gap:5px;"></div>
+
+              <!-- Loader -->
+              <div id="tad-loader" style="display:flex;align-items:center;gap:6px;padding:4px 9px;">
+                <div style="width:5px;height:5px;border-radius:50%;background:#FF5C00;"></div>
+                <span style="font-size:9.5px;color:rgba(255,92,0,0.5);font-weight:500;">Génération en cours...</span>
+              </div>
+
+              <!-- Validation bar -->
+              <div id="tad-valbar" style="display:none;margin-top:9px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(255,92,0,0.09);border:1px solid rgba(255,92,0,0.32);border-radius:7px;padding:7px 11px;">
+                  <span id="tad-valtxt" style="font-size:10.5px;color:#FF5C00;font-weight:600;"></span>
+                  <button onclick="tadReset()" style="background:#FF5C00;color:#fff;border:none;border-radius:5px;font-size:9.5px;font-weight:700;padding:5px 13px;cursor:pointer;">Valider ce titre →</button>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -2401,107 +2460,97 @@ function submitWaitlist() {
 </script>
 
 
+
 <style>
-.tda{animation:tdaFade 200ms ease forwards}
-@keyframes tdaFade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-#demo-content::-webkit-scrollbar{display:none}
-.demo-input{width:100%;background:#1F1F1F;color:#fff;border:1px solid #2A2A2A;border-radius:10px;padding:10px 12px;font-size:13px;font-family:inherit;outline:none;box-sizing:border-box;transition:border-color 150ms}
-.demo-input:focus{border-color:#FF5C00}
-.demo-btn-primary{background:#FF5C00;color:#fff;border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;width:100%}
-.demo-btn-primary:disabled{background:#2A2A2A;color:rgba(255,255,255,0.25);cursor:not-allowed}
-.demo-btn-ghost{background:transparent;color:rgba(255,255,255,0.5);border:1px solid #2A2A2A;border-radius:7px;padding:5px 10px;font-size:11px;cursor:pointer;font-family:inherit}
+@keyframes tadFadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes tadPulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+#tad-live { animation: tadPulse 2s ease infinite; }
+#tad-loader > div:first-child { animation: tadPulse 1s ease infinite; }
+.tad-alt { transition: all 0.15s ease; animation: tadFadeUp 0.32s ease forwards; cursor:pointer; }
+.tad-alt:hover { border-color: rgba(255,92,0,0.35) !important; background: rgba(255,255,255,0.05) !important; }
 </style>
 <script>
 (function(){
-var API='https://thumbai-tan.vercel.app';
-var S={step:0,titre:'',desc:'',titreValide:'',hookResult:null,scResult:null};
-var PROFILE={niche:'Finance personnelle',format_contenu:'challenge'};
-function $id(id){return document.getElementById(id);}
-function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-function renderStepper(){
-  var labels=['Titre','Hook Analyzer','Semantic Check'];
-  var el=$id('demo-stepper');if(!el)return;
-  var h='<div style="display:flex;align-items:center;">';
-  labels.forEach(function(l,i){
-    var active=S.step===i,done=i<S.step;
-    h+='<div style="display:flex;align-items:center;">'
-      +'<div style="display:flex;align-items:center;gap:5px;padding:4px 9px;border-radius:100px;background:'+(active?'rgba(255,92,0,0.10)':'transparent')+';color:'+(active?'#FF5C00':done?'rgba(255,255,255,0.5)':'rgba(255,255,255,0.25)')+';font-weight:'+(active?700:500)+';font-size:11px;">'
-      +'<div style="width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;background:'+(i<=S.step?'#FF5C00':'#2A2A2A')+';color:'+(i<=S.step?'#fff':'rgba(255,255,255,0.5)')+';">'+(done?'&#10003;':i+1)+'</div>'+l+'</div>'
-      +(i<2?'<div style="width:14px;height:1px;background:'+(done?'#FF5C00':'#1F1F1F')+';"></div>':'')
-      +'</div>';
-  });
-  el.innerHTML=h+'</div>';
-}
-function showStep1(){
-  var descOk=S.desc.length>=80,ok=S.titre.trim()&&descOk;
-  $id('demo-content').innerHTML='<div class="tda" style="display:flex;flex-direction:column;gap:16px;">'
-    +'<div><div style="font-size:18px;font-weight:800;color:#fff;margin-bottom:3px;">Ton titre + ton contenu</div>'
-    +'<div style="font-size:12px;color:rgba(255,255,255,0.5);">Le Hook Analyzer optimise ton titre. La description active le Semantic Check.</div></div>'
-    +'<div><label style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.8);display:block;margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;">Titre de ta video</label>'
-    +'<input id="d-titre" class="demo-input" type="text" placeholder="Ex: J\'ai investi 10 000 euros en bourse pendant 1 an..." value="'+esc(S.titre)+'"></div>'
-    +'<div><label style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.8);display:block;margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;">Ce que ta video va vraiment couvrir</label>'
-    +'<textarea id="d-desc" class="demo-input" rows="3" placeholder="Decris ce que tu vas vraiment montrer - 2-3 phrases suffisent.">'+esc(S.desc)+'</textarea>'
-    +'<div id="d-ctr" style="font-size:11px;margin-top:4px;color:'+(descOk?'#22C55E':'rgba(255,255,255,0.3)')+';">'+(S.desc.length<80?S.desc.length+'/80 car. - '+(80-S.desc.length)+' restants':'&#10003; '+S.desc.length+' caracteres')+'</div></div>'
-    +'<button id="d-btn1" class="demo-btn-primary" '+(ok?'':'disabled')+'>Analyser mon titre &#8594;</button>'
+var ALTS = [
+  {label:"ALT-4", text:"J'ai pratiqué la guitare 2h/jour pendant 1 an — résultat décevant", score:84},
+  {label:"ALT-3", text:"J'ai arrêté la guitare après 3 ans. Voilà pourquoi je recommence.", score:81},
+  {label:"ALT-5", text:"J'ai appris la guitare en 30 jours — voilà ce que j'aurais dû savoir avant", score:78},
+  {label:"ALT-1", text:"J'ai tout misé sur la guitare pour en vivre. Ça n'a pas marché comme prévu.", score:76},
+  {label:"ALT-2", text:"3 ans de guitare. Ce que j'aurais aimé savoir dès le départ.", score:71}
+];
+var selectedAlt = null;
+var timers = [];
+
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function renderAlt(alt, i) {
+  var sel = selectedAlt === i;
+  var div = document.createElement('div');
+  div.className = 'tad-alt';
+  div.setAttribute('data-i', i);
+  div.style.cssText = 'background:'+(sel?'rgba(255,92,0,0.09)':'rgba(255,255,255,0.03)')+
+    ';border:1px solid '+(sel?'rgba(255,92,0,0.45)':'rgba(255,255,255,0.07)')+
+    ';border-radius:7px;padding:7px 9px;';
+  div.innerHTML = '<div style="display:flex;align-items:flex-start;gap:7px;">'
+    +'<div style="background:#FF5C00;color:#fff;font-size:7.5px;font-weight:800;border-radius:3px;padding:2px 5px;flex-shrink:0;margin-top:1px;letter-spacing:.04em;">'+alt.label+'</div>'
+    +'<div style="flex:1;font-size:10.5px;font-weight:600;line-height:1.4;color:'+(sel?'#fff':'rgba(255,255,255,0.78)')+';">'+esc(alt.text)+'</div>'
+    +'<div style="font-size:13px;font-weight:800;color:#FF5C00;flex-shrink:0;">'+alt.score+'</div>'
     +'</div>';
-  var ti=$id('d-titre'),de=$id('d-desc'),btn=$id('d-btn1'),ctr=$id('d-ctr');
-  function upd(){var ok2=ti.value.trim()&&de.value.length>=80;btn.disabled=!ok2;ctr.style.color=de.value.length>=80?'#22C55E':'rgba(255,255,255,0.3)';ctr.textContent=de.value.length<80?de.value.length+'/80 car. - '+(80-de.value.length)+' restants':'✓ '+de.value.length+' car.';}
-  ti.addEventListener('input',function(){S.titre=ti.value;upd();});
-  de.addEventListener('input',function(){S.desc=de.value;upd();});
-  btn.addEventListener('click',function(){if(!ti.value.trim()||de.value.length<80)return;S.titre=ti.value;S.desc=de.value;S.hookResult=null;S.step=1;renderStepper();showStep2();});
+  div.onclick = function() { tadSelect(i); };
+  return div;
 }
-function loader(emoji,label,sec){return '<div style="background:#111;border:1px solid #1F1F1F;border-radius:14px;overflow:hidden;"><div style="height:3px;background:#1F1F1F;"><div id="d-bar" style="height:100%;width:0%;background:#FF5C00;border-radius:2px;transition:width '+sec+'s linear;"></div></div><div style="text-align:center;padding:32px 0;"><div style="font-size:24px;margin-bottom:8px;">'+emoji+'</div><div style="font-weight:700;color:#fff;font-size:13px;">'+label+'</div><div id="d-cd" style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px;">Pret dans '+sec+'s</div></div></div>';}
-function startBar(sec){setTimeout(function(){var b=$id('d-bar');if(b)b.style.width='95%';},50);var c=sec,iv=setInterval(function(){c=Math.max(1,c-1);var e=$id('d-cd');if(e)e.textContent='Pret dans '+c+'s';else clearInterval(iv);},1000);return iv;}
-function badge(label,val){if(val===undefined||val===null)return'';var g=val>=70,a=val>=50&&val<70;var bg=g?'rgba(34,197,94,0.08)':a?'rgba(245,158,11,0.08)':'rgba(239,68,68,0.08)';var col=g?'#22C55E':a?'#F59E0B':'#EF4444';var bo=g?'rgba(34,197,94,0.20)':a?'rgba(245,158,11,0.20)':'rgba(239,68,68,0.20)';return'<div style="flex:1;background:'+bg+';border:1px solid '+bo+';border-radius:10px;padding:10px 0;text-align:center;"><div style="font-size:22px;font-weight:900;color:'+col+';line-height:1;">'+val+'</div><div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:3px;">'+label+' /100</div></div>';}
-function renderHookResult(data){
-  var alts=data.alternatives||[],sc=data.scores_titre||{};
-  var h='<div class="tda" style="display:flex;flex-direction:column;gap:12px;">'
-    +'<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">'
-    +'<div><div style="font-size:16px;font-weight:800;color:#fff;">Hook Analyzer</div>'
-    +'<div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px;">"'+esc(S.titre)+'"</div></div>'
-    +'<button class="demo-btn-ghost" onclick="window._dB()">&#8592; Retour</button></div>';
-  if(sc.score_global!==undefined)h+='<div style="display:flex;gap:8px;">'+badge('Intrigue',sc.intrigue_score)+badge('Vide narratif',sc.vide_narratif_score)+badge('Global',sc.score_global)+'</div>';
-  if(alts.length){
-    h+='<div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.8);margin-bottom:4px;">5 alternatives :</div><div style="display:flex;flex-direction:column;gap:6px;">';
-    alts.forEach(function(alt,i){
-      var sel=S.titreValide===alt.titre;
-      h+='<div onclick="window._dS(this,\''+i+'\')" data-titre="'+alt.titre.replace(/"/g,'&quot;')+'" style="padding:10px 12px;border-radius:10px;border:2px solid '+(sel?'#FF5C00':'#2A2A2A')+';background:'+(sel?'rgba(255,92,0,0.10)':'#171717')+';cursor:pointer;">'
-        +'<span style="font-size:9px;font-weight:700;background:#FF5C00;color:#fff;border-radius:100px;padding:2px 7px;">'+esc(alt.type||'ALT-'+(i+1))+'</span>'
-        +'<div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-top:5px;word-break:break-word;">'+esc(alt.titre)+'</div>'
-        +(alt.correction_ciblee?'<div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:3px;">&#127919; '+esc(alt.correction_ciblee)+'</div>':'')
-        +'</div>';
-    });
-    h+='</div>';
+
+function tadSelect(i) {
+  selectedAlt = i;
+  var container = document.getElementById('tad-alts');
+  if (!container) return;
+  var cards = container.querySelectorAll('.tad-alt');
+  cards.forEach(function(c, idx) {
+    var sel = idx === i;
+    c.style.background = sel ? 'rgba(255,92,0,0.09)' : 'rgba(255,255,255,0.03)';
+    c.style.borderColor = sel ? 'rgba(255,92,0,0.45)' : 'rgba(255,255,255,0.07)';
+    c.querySelector('div > div:nth-child(2)').style.color = sel ? '#fff' : 'rgba(255,255,255,0.78)';
+  });
+  var bar = document.getElementById('tad-valbar');
+  var txt = document.getElementById('tad-valtxt');
+  if (bar && txt) {
+    txt.textContent = '✓ ' + ALTS[i].score + '/100 · Titre sélectionné';
+    bar.style.display = 'block';
   }
-  h+='<button id="d-val" class="demo-btn-primary" '+(S.titreValide?'':'disabled')+' onclick="window._dV()">Valider ce titre &#8594;</button></div>';
-  $id('demo-content').innerHTML=h;
 }
-function showStep2(){if(S.hookResult){renderHookResult(S.hookResult);return;}$id('demo-content').innerHTML=loader('&#129504;','Analyse en cours...',12);var iv=startBar(12);fetch(API+'/api/hook-analyzer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({titre:S.titre,description_contenu:S.desc,creator_profile:PROFILE})}).then(function(r){return r.json();}).then(function(data){clearInterval(iv);S.hookResult=data;if(!S.titreValide&&data.alternatives&&data.alternatives[0])S.titreValide=data.alternatives[0].titre;renderHookResult(data);}).catch(function(){clearInterval(iv);$id('demo-content').innerHTML='<div style="color:#EF4444;padding:20px;text-align:center;">Erreur reseau.<br><button class="demo-btn-ghost" style="margin-top:12px;" onclick="window._dB()">&#8592; Retour</button></div>';});}
-function renderSCResult(data){
-  var h='<div class="tda" style="display:flex;flex-direction:column;gap:12px;">'
-    +'<div style="display:flex;justify-content:space-between;align-items:center;">'
-    +'<div><div style="font-size:16px;font-weight:800;color:#fff;">Semantic Check</div>'
-    +'<div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;">Coherence titre vs contenu</div></div>'
-    +'<button class="demo-btn-ghost" onclick="window._dB1()">&#8592; Retour</button></div>'
-    +'<div style="background:#171717;border-radius:10px;padding:10px 12px;border:1px solid #1F1F1F;font-size:13px;color:rgba(255,255,255,0.8);word-break:break-word;"><span style="font-size:11px;color:rgba(255,255,255,0.5);">Titre valide : </span>'+esc(S.titreValide)+'</div>';
-  if(!data){$id('demo-content').innerHTML=h+'</div>';return;}
-  if(data.niveau==='coherent'){h+='<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.20);border-radius:14px;padding:28px 20px;text-align:center;"><div style="font-size:30px;margin-bottom:8px;">&#9989;</div><div style="font-weight:700;color:#22C55E;font-size:16px;">Coherence validee</div>'+(data.semantic_coherence_score?'<div style="font-size:30px;font-weight:900;color:#22C55E;margin-top:6px;">'+data.semantic_coherence_score+'/100</div>':'')+(data.verdict?'<div style="font-size:12px;color:rgba(34,197,94,0.65);margin-top:8px;line-height:1.5;">'+esc(data.verdict)+'</div>':'')+'</div><button class="demo-btn-ghost" style="width:100%;padding:10px;" onclick="window._dR()">Analyser un autre titre &#8594;</button>';}
-  else if(data.niveau==='tension'){h+='<div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.20);border-radius:14px;padding:16px 18px;"><div style="font-weight:700;color:#F59E0B;font-size:14px;margin-bottom:6px;">&#9888;&#65039; Tension semantique</div><div style="font-size:12px;color:rgba(245,158,11,0.85);line-height:1.5;margin-bottom:10px;">'+esc(data.verdict)+'</div>'+(data.action_corrective?'<div style="font-size:12px;background:rgba(245,158,11,0.10);border-radius:8px;padding:8px 10px;margin-bottom:12px;">&#128161; '+esc(data.action_corrective)+'</div>':'')+'<div style="display:flex;gap:8px;"><button class="demo-btn-ghost" style="flex:1;" onclick="window._dB1()">Corriger</button><button class="demo-btn-primary" style="flex:1;" onclick="window._dR()">Continuer</button></div></div>';}
-  else if(data.niveau==='mismatch'){h+='<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.20);border-radius:14px;padding:16px 18px;"><div style="font-weight:700;color:#EF4444;font-size:14px;margin-bottom:6px;">&#128680; Mismatch semantique</div><div style="font-size:12px;color:rgba(239,68,68,0.85);line-height:1.5;margin-bottom:10px;">'+esc(data.verdict)+'</div>'+(data.action_corrective?'<div style="font-size:12px;background:rgba(239,68,68,0.10);border-radius:8px;padding:8px 10px;margin-bottom:12px;">&#128161; '+esc(data.action_corrective)+'</div>':'')+'<div style="display:flex;gap:8px;"><button class="demo-btn-ghost" style="flex:1;" onclick="window._dB1()">Corriger</button><button class="demo-btn-primary" style="flex:1;" onclick="window._dR()">Recommencer</button></div></div>';}
-  $id('demo-content').innerHTML=h+'</div>';
-}
-function showStep3(){if(S.scResult){renderSCResult(S.scResult);return;}$id('demo-content').innerHTML=loader('&#128269;','Analyse de coherence...',8);var iv=startBar(8);fetch(API+'/api/semantic-check',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({titre_valide:S.titreValide,description_contenu:S.desc,creator_profile:PROFILE})}).then(function(r){return r.json();}).then(function(data){clearInterval(iv);S.scResult=data;renderSCResult(data);}).catch(function(){clearInterval(iv);renderSCResult(null);});}
-window._dB=function(){S.step=0;renderStepper();showStep1();};
-window._dB1=function(){S.step=1;renderStepper();showStep2();};
-window._dR=function(){S={step:0,titre:'',desc:'',titreValide:'',hookResult:null,scResult:null};renderStepper();showStep1();};
-window._dS=function(el,idx){
-  var data=S.hookResult;if(!data||!data.alternatives)return;
-  S.titreValide=el.getAttribute('data-titre');
-  renderHookResult(data);
+
+window.tadReset = function() {
+  timers.forEach(clearTimeout);
+  timers = [];
+  selectedAlt = null;
+  var container = document.getElementById('tad-alts');
+  var loader = document.getElementById('tad-loader');
+  var bar = document.getElementById('tad-valbar');
+  if (container) container.innerHTML = '';
+  if (loader) loader.style.display = 'flex';
+  if (bar) bar.style.display = 'none';
+  startAnimation();
 };
-window._dV=function(){if(!S.titreValide)return;S.scResult=null;S.step=2;renderStepper();showStep3();};
-function init(){var el=$id('demo-content');if(!el){setTimeout(init,30);return;}renderStepper();showStep1();}
-setTimeout(init,0);
+
+function startAnimation() {
+  var container = document.getElementById('tad-alts');
+  var loader = document.getElementById('tad-loader');
+  if (!container) return;
+  ALTS.forEach(function(alt, i) {
+    var t = setTimeout(function() {
+      container.appendChild(renderAlt(alt, i));
+      if (i === ALTS.length - 1 && loader) loader.style.display = 'none';
+    }, 1200 + i * 400);
+    timers.push(t);
+  });
+}
+
+function init() {
+  var el = document.getElementById('tad-alts');
+  if (!el) { setTimeout(init, 30); return; }
+  startAnimation();
+}
+setTimeout(init, 0);
 })();
 </script>
 
