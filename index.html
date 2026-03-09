@@ -1706,48 +1706,63 @@ Le seul workflow conçu<br>pour faire cliquer.
 
       <!-- TAB 2 -->
       <div class="tab-panel" id="tab-1" style="display:none; grid-template-columns:1fr 1fr; gap:2px; border-radius:16px; overflow:hidden; border:1px solid var(--border);">
+        <!-- Gauche -->
         <div style="background:#111; padding:40px 36px;">
           <span style="display:inline-block; background:rgba(220,50,50,0.15); color:#f87171; font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:24px; font-family:var(--font-mono);">L'ANCIENNE MÉTHODE</span>
-          <div style="background:#0A0A0A; border:1px solid #1A1A1A; border-radius:12px; padding:20px; margin-bottom:28px; font-family:var(--font-mono); font-size:12px; color:var(--text-3); line-height:1.8;">
-            <div style="margin-bottom:8px; color:#888; font-style:italic;">"Ça ressemble à ce qui marche chez eux."</div>
-            <div style="background:rgba(220,50,50,0.1); border:1px solid rgba(220,50,50,0.2); border-radius:8px; padding:10px 14px;">
-              <div style="color:#f87171; font-size:11px; margin-bottom:4px;">Score packaging estimé</div>
-              <div style="color:#f87171; font-size:20px; font-weight:700;">38/100</div>
-              <div style="color:#f87171; font-size:11px; margin-top:4px;">Redondance titre/miniature · Vide narratif absent</div>
+
+          <!-- Tableau rouge -->
+          <div style="border:1px solid rgba(220,50,50,0.2); border-radius:10px; overflow:hidden; margin-bottom:24px; font-family:var(--font-mono); font-size:11px;">
+            <div style="display:flex; justify-content:space-between; padding:10px 14px; border-bottom:1px solid rgba(220,50,50,0.15); background:rgba(220,50,50,0.05);">
+              <span style="color:#666;">Temps passé sur la miniature</span>
+              <span style="color:#f87171; font-weight:700;">79€ et 0 donnée</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; border-bottom:1px solid rgba(220,50,50,0.15); background:rgba(220,50,50,0.03);">
+              <span style="color:#666;">Validation avant publication</span>
+              <span style="color:#f87171; font-style:italic;">"C’est joli. Ça va passer."</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:10px 14px; background:rgba(220,50,50,0.05);">
+              <span style="color:#666;">Feedback</span>
+              <span style="color:#f87171; font-weight:700;">3 semaines plus tard</span>
             </div>
           </div>
+
+          <!-- Liste -->
           <div style="display:flex; flex-direction:column; gap:10px;">
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Miniature = illustration du titre. Aucun élément nouveau.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Texte overlay répète ce que le titre dit déjà.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Le cerveau résout le puzzle avant le clic.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Copie le style des gros — sans comprendre la logique.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Aucune vérification de cohérence sémantique.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6; margin-top:6px; font-weight:600; font-style:italic;">Tu espères. Tu publies. Tu subis.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Tu as passé 79€ pour une miniature "jolie". Aucun score. Aucune donnée. Juste ton œil fatigué à 23h.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Ton seul critère avant de publier : "ça va passer." Tu publies au feeling. Tu pries pour que ça marche.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Ta miniature répète ton titre. Le spectateur a tout lu. Il n’a plus rien à découvrir.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Tu sauras si ça a marché dans 3 semaines. Trop tard pour changer quoi que ce soit.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65; margin-top:8px; font-weight:600; font-style:italic; color:#888;">Tu publies en espérant. Tu sauras dans 3 semaines.</div>
           </div>
         </div>
+
+        <!-- Droite -->
         <div style="background:#161616; padding:40px 36px;">
           <span style="display:inline-block; background:rgba(255,92,0,0.15); color:var(--orange); font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:24px; font-family:var(--font-mono); width:fit-content;">AVEC THUMBAI</span>
-          <div style="background:#0A0A0A; border:1px solid #1A1A1A; border-radius:12px; padding:20px; margin-bottom:28px; font-family:var(--font-mono); font-size:12px; color:var(--text-3); line-height:1.8;">
-            <div style="margin-bottom:8px;">Cohérence : <span style="color:#4ade80;">✓ 94%</span> · Mismatch : <span style="color:#4ade80;">✗ aucun</span></div>
-            <div style="display:flex; gap:6px; margin-bottom:12px; flex-wrap:wrap;">
-              <span style="background:rgba(255,92,0,0.1); border:1px solid rgba(255,92,0,0.2); padding:4px 10px; border-radius:6px; color:var(--orange); font-size:11px;">V1 Standard</span>
-              <span style="background:#1A1A1A; border:1px solid #333; padding:4px 10px; border-radius:6px; color:#888; font-size:11px;">V2 High Design</span>
-              <span style="background:#1A1A1A; border:1px solid #333; padding:4px 10px; border-radius:6px; color:#888; font-size:11px;">V3 Cinematic</span>
+
+          <!-- Tableau vert -->
+          <div style="border:1px solid rgba(34,197,94,0.2); border-radius:10px; overflow:hidden; margin-bottom:24px; font-family:var(--font-mono); font-size:11px;">
+            <div style="display:flex; justify-content:space-between; padding:10px 14px; border-bottom:1px solid rgba(34,197,94,0.15); background:rgba(34,197,94,0.05);">
+              <span style="color:#666;">Temps passé sur la miniature</span>
+              <span style="color:#22c55e; font-weight:700;">60 secondes · scorée</span>
             </div>
-            <div style="display:flex; flex-direction:column; gap:4px; font-size:11px;">
-              <div style="display:flex; justify-content:space-between;"><span>Vide Narratif</span><span style="color:#4ade80;">92/100</span></div>
-              <div style="display:flex; justify-content:space-between;"><span>Intrigue du titre</span><span style="color:#4ade80;">88/100</span></div>
-              <div style="display:flex; justify-content:space-between;"><span>Cohérence sémantique</span><span style="color:#4ade80;">91/100</span></div>
-              <div style="display:flex; justify-content:space-between;"><span>Qualité visuelle</span><span style="color:var(--orange);">74/100</span></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; border-bottom:1px solid rgba(34,197,94,0.15); background:rgba(34,197,94,0.03);">
+              <span style="color:#666;">Validation avant publication</span>
+              <span style="color:#22c55e; font-weight:700;">score /100 · axes détaillés</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:10px 14px; background:rgba(34,197,94,0.05);">
+              <span style="color:#666;">Feedback</span>
+              <span style="color:#22c55e; font-weight:700;">immédiat + confirmé après</span>
             </div>
           </div>
+
+          <!-- Liste -->
           <div style="display:flex; flex-direction:column; gap:10px;">
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;<strong style="color:var(--text);">3 variantes construites</strong> depuis ton brief — pas depuis un template.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;<strong style="color:var(--text);">Texte overlay calculé.</strong> Jamais une répétition du titre.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;Cohérence sémantique vérifiée avant génération.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;<strong style="color:var(--text);">Score /100</strong> avec décomposition causale — pas un chiffre esthétique.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;La miniature révèle l'Acte 3. Elle ne répète pas l'Acte 1.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6; margin-top:6px; font-weight:600; font-style:italic; color:var(--text);">Tu sais. Tu publies. Tu mesures.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;Ta miniature est scorée avant de publier. Chaque point perdu a une raison. Chaque raison a une solution.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;Tu ne publies pas au feeling. Tu publies avec un score. Ce qui passe et ce qui coince tu le sais avant tout le monde.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;Ta miniature complète ton titre. Elle ne le répète pas. Le spectateur voit le résultat. Le titre posait la question.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:var(--orange);">✓</span> &nbsp;Tu confirmes dans 3 semaines. Tu ne découvres pas. La donnée vient valider ce que tu savais déjà.</div>
+            <div style="font-size:13px; color:var(--text); line-height:1.65; margin-top:8px; font-weight:600; font-style:italic;">Tu publies en sachant. Tu confirmes dans 3 semaines.</div>
           </div>
         </div>
       </div>
