@@ -1440,22 +1440,67 @@ Le seul workflow conçu<br>pour faire cliquer.
         <!-- Gauche -->
         <div style="background:#111; padding:40px 36px;">
           <span style="display:inline-block; background:rgba(220,50,50,0.15); color:#f87171; font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:24px; font-family:var(--font-mono);">L'ANCIENNE MÉTHODE</span>
-          <div style="background:#0A0A0A; border:1px solid #1A1A1A; border-radius:12px; padding:20px; margin-bottom:28px; font-family:var(--font-mono); font-size:12px; color:var(--text-3); line-height:1.8;">
-            <div style="margin-bottom:8px;">Titre tapé : <span style="color:var(--text-2);">"Comment faire de l'argent en bourse"</span></div>
-            <div style="margin-bottom:12px; color:#888; font-style:italic;">"Ça devrait aller…"</div>
-            <div style="background:rgba(220,50,50,0.1); border:1px solid rgba(220,50,50,0.2); border-radius:8px; padding:10px 14px;">
-              <div style="color:#f87171; font-size:11px; margin-bottom:4px;">CTR 3 semaines plus tard</div>
-              <div style="color:#f87171; font-size:20px; font-weight:700;">2,4%</div>
-              <div style="color:#f87171; font-size:11px;">↓ 68% sous la moyenne niche</div>
+
+          <!-- Timeline -->
+          <div style="display:flex; flex-direction:column; gap:0; margin-bottom:28px; position:relative;">
+            <div style="position:absolute; left:14px; top:20px; bottom:20px; width:1px; background:#222;"></div>
+
+            <div style="display:flex; gap:14px; align-items:flex-start; padding:12px 0;">
+              <div style="flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#1A1A1A; border:1px solid #333; display:flex; align-items:center; justify-content:center; font-size:11px; color:#666; font-family:var(--font-mono); z-index:1;">1</div>
+              <div>
+                <div style="font-size:12px; font-weight:700; color:var(--text-2); margin-bottom:2px;">IDÉE</div>
+                <div style="font-size:12px; color:#555; line-height:1.5; font-style:italic;">"Ce sujet a l'air bien. Les gens cherchent ça."<br><span style="color:#444;">→ Pas de validation packaging. Intuition pure.</span></div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:14px; align-items:flex-start; padding:12px 0;">
+              <div style="flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#1A1A1A; border:1px solid #333; display:flex; align-items:center; justify-content:center; font-size:11px; color:#666; font-family:var(--font-mono); z-index:1;">2</div>
+              <div>
+                <div style="font-size:12px; font-weight:700; color:var(--text-2); margin-bottom:2px;">SCRIPT</div>
+                <div style="font-size:12px; color:#555; line-height:1.5; font-style:italic;">Il écrit son script. Travaille son hook d'intro.<br>Titre en haut du doc : <span style="color:#444;">"Je verrai après."</span></div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:14px; align-items:flex-start; padding:12px 0;">
+              <div style="flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#1A1A1A; border:1px solid #333; display:flex; align-items:center; justify-content:center; font-size:11px; color:#666; font-family:var(--font-mono); z-index:1;">3</div>
+              <div>
+                <div style="font-size:12px; font-weight:700; color:var(--text-2); margin-bottom:2px;">TOURNAGE</div>
+                <div style="font-size:12px; color:#555; line-height:1.5; font-style:italic;">Il filme. Aucun shot pensé pour la miniature.<br>Aucune scène de révélation capturée.</div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:14px; align-items:flex-start; padding:12px 0;">
+              <div style="flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#1A1A1A; border:1px solid #333; display:flex; align-items:center; justify-content:center; font-size:11px; color:#666; font-family:var(--font-mono); z-index:1;">4</div>
+              <div>
+                <div style="font-size:12px; font-weight:700; color:var(--text-2); margin-bottom:2px;">MONTAGE</div>
+                <div style="font-size:12px; color:#555; line-height:1.5; font-style:italic;">6-8h de montage. Il réalise que le titre<br>provisoire ne tient plus. Il ajuste. Il espère.</div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:14px; align-items:flex-start; padding:12px 0;">
+              <div style="flex-shrink:0; width:28px; height:28px; border-radius:50%; background:rgba(220,50,50,0.15); border:1px solid rgba(220,50,50,0.3); display:flex; align-items:center; justify-content:center; font-size:11px; color:#f87171; font-family:var(--font-mono); z-index:1;">5</div>
+              <div>
+                <div style="font-size:12px; font-weight:700; color:#f87171; margin-bottom:2px;">MINIATURE — 2h30</div>
+                <div style="font-size:12px; color:#555; line-height:1.5; font-style:italic;">Il fouille ses rushes. Ouvre Canva. Essaie des choses.<br>Parfois paye 79€ pour un designer.<br><span style="color:#444; font-style:italic;">"C'est correct. C'est trop tard pour refaire."</span></div>
+              </div>
             </div>
           </div>
+
+          <!-- Badge résultat -->
+          <div style="background:rgba(220,50,50,0.08); border:1px solid rgba(220,50,50,0.2); border-radius:10px; padding:14px 16px; margin-bottom:24px; font-family:var(--font-mono); font-size:11px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;"><span style="color:#666;">Temps packaging</span><span style="color:#f87171;">2h30 minimum</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;"><span style="color:#666;">Résultat</span><span style="color:#f87171; font-style:italic;">"un truc qui colle"</span></div>
+            <div style="display:flex; justify-content:space-between;"><span style="color:#666;">CTR moyen</span><span style="color:#f87171; font-weight:700;">2,4%</span></div>
+          </div>
+
+          <!-- Liste ❌ -->
           <div style="display:flex; flex-direction:column; gap:10px;">
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Titre tapé en 2 minutes après 10h de montage.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Format "Comment faire" — aucune tension, aucun enjeu.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Résultat révélé dans le titre. Vide narratif inexistant.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Aucun feedback avant publication.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Tu ajustes après que les vues confirment l'échec.</div>
-            <div style="font-size:14px; color:var(--text-2); line-height:1.6; margin-top:6px; font-weight:600; font-style:italic;">Tu espères. Tu publies. Tu subis.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Le hook que tu as écrit, c'est pour ta vidéo. Pas pour ton packaging.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Tu n'as filmé aucun shot pour ta miniature. Tu fouilles tes rushes en espérant.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Ton titre a changé 3 fois. Ta miniature essaie de coller à une promesse mouvante.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Tout le packaging se fait après le montage. Quand t'es épuisé. Trop tard.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.6;"><span style="color:#f87171;">✕</span> &nbsp;Tu rétrofites un packaging sur une vidéo pas filmée pour ça. L'algo le mesure.</div>
+            <div style="font-size:13px; color:var(--text-2); line-height:1.65; margin-top:8px; font-weight:600; font-style:italic; color:#888;">10 heures de travail. 2h30 sur la miniature.<br>Un CTR que tu subis.</div>
           </div>
         </div>
         <!-- Droite -->
