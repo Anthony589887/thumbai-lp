@@ -1471,7 +1471,7 @@ Le seul workflow conçu<br>pour faire cliquer.
         </div>
         <!-- Droite — ThumbAI Demo -->
         <div style="background:#0A0A0A; padding:0; display:flex; flex-direction:column;">
-          <div id="thumbai-demo" style="width:100%; height:100%; display:flex; flex-direction:column; font-family:'DM Sans','Inter',system-ui,sans-serif;">
+          <div id="thumbai-demo" style="width:100%; min-height:520px; display:flex; flex-direction:column; font-family:'DM Sans','Inter',system-ui,sans-serif;">
 
             <!-- Top bar -->
             <div style="flex-shrink:0; display:flex; align-items:center; padding:10px 20px; background:#111; border-bottom:1px solid #1F1F1F; gap:16px;">
@@ -1484,7 +1484,7 @@ Le seul workflow conçu<br>pour faire cliquer.
             </div>
 
             <!-- Scrollable content -->
-            <div id="demo-content" style="flex:1; overflow-y:auto; padding:22px 28px; scrollbar-width:none;"></div>
+            <div id="demo-content" style="flex:1; min-height:400px; overflow-y:auto; padding:22px 28px; scrollbar-width:none;"></div>
           </div>
         </div>
       </div>
@@ -2386,9 +2386,17 @@ function submitWaitlist() {
     render();
   };
 
-  // Init
-  document.addEventListener('DOMContentLoaded', function() { render(); });
-  if (document.readyState !== 'loading') render();
+  // Init — attendre que tous les éléments soient dans le DOM
+  function initDemo() {
+    var el = document.getElementById('demo-content');
+    if (el) { render(); }
+    else { setTimeout(initDemo, 50); }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDemo);
+  } else {
+    setTimeout(initDemo, 0);
+  }
 })();
 </script>
 
