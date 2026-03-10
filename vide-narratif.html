@@ -808,6 +808,28 @@
     font-weight: 600 !important;
     margin-top: 8px;
   }
+
+  .related-coming {
+    position: relative;
+    opacity: 0.5;
+    cursor: default;
+  }
+  .related-coming::before {
+    content: 'Coming Soon';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255,92,0,0.15);
+    border: 1px solid rgba(255,92,0,0.35);
+    color: #FF5C00;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-family: 'DM Mono', monospace;
+  }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -1059,7 +1081,7 @@
     <div class="cta-inline">
       <h3>Mesure le Vide Narratif de ta prochaine vidéo.</h3>
       <p>Un score sur 100 avant de publier. Titre, miniature, cohérence sémantique, validés en 90 secondes.</p>
-      <a href="https://thumbai.fr/#" class="btn-primary">Obtenir mon accès bêta →</a>
+      <a href="index.html#" class="btn-primary">Obtenir mon accès bêta →</a>
       <p class="cta-micro">✓ 1 packaging gratuit &nbsp;·&nbsp; ✓ Lecture seule &nbsp;·&nbsp; ✓ Prix early adopters</p>
     </div>
 
@@ -1067,16 +1089,16 @@
     <div class="related-section">
       <p class="related-label">Articles liés</p>
       <div class="related-grid">
-        <a href="non-redondance.html" class="related-card">
+        <div class="related-card related-coming">
           <div class="related-tag">Règle fondamentale</div>
           <h4>La règle de non-redondance titre / miniature</h4>
           <p>Quand titre et miniature disent la même chose, le puzzle est résolu avant le clic.</p>
         </a>
-        <a href="formats-qui-tuent.html" class="related-card">
+        <div class="related-card related-coming">
           <div class="related-tag">CTR</div>
           <h4>Les 5 formats de titre qui tuent le CTR systématiquement</h4>
           <p>Les patterns à éviter, et ce qu'il faut mettre à la place.</p>
-        </a>
+        </div>
       </div>
     </div>
 
