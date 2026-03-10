@@ -49,53 +49,56 @@
     }
 
     /* ── NAV ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10,10,10,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, background 0.3s, backdrop-filter 0.3s;
+  }
+  nav.scrolled {
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom-color: var(--border);
+  }
 
-    .nav-logo {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .nav-logo span { color: var(--orange); }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-logo-dot { color: var(--orange); }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a {
+    color: var(--text-2);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
 
-    .nav-links a {
-      color: var(--text-2);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-
-    .nav-cta {
-      background: var(--orange) !important;
-      color: #fff !important;
-      padding: 8px 18px;
-      border-radius: 8px;
-      font-size: 13px !important;
-      font-weight: 700 !important;
-      transition: opacity .2s, transform .2s !important;
-    }
-    .nav-cta:hover { opacity: 0.88 !important; transform: translateY(-1px) !important; }
+  .nav-cta {
+    background: var(--orange);
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: opacity 0.2s, transform 0.2s !important;
+  }
+  .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
 
     /* ── PROGRESS BAR ── */
     .progress-bar {
