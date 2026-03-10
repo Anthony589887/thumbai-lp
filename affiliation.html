@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programme Affiliation — ThumbAI</title>
+  <meta name="description" content="Gagne 30% de commission récurrente à vie sur chaque créateur que tu parraines. Ton audience. Notre outil. Ta commission, tous les mois.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0A0A0A;
+      --bg2: #111111;
+      --bg3: #181818;
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(255,92,0,0.4);
+      --orange: #FF5C00;
+      --orange-dim: rgba(255,92,0,0.12);
+      --orange-glow: rgba(255,92,0,0.25);
+      --green: #22C55E;
+      --green-dim: rgba(34,197,94,0.1);
+      --text: #F5F5F5;
+      --text-2: #A0A0A0;
+      --text-3: #606060;
+      --font-display: 'SF Pro Display', -apple-system, sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    /* ── NAV (identique LP) ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, background 0.3s, backdrop-filter 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom-color: var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-logo-dot { color: var(--orange); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--orange);
+      color: #fff !important;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      transition: opacity 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 200;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.25s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 61px; left: 0; right: 0;
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      flex-direction: column;
+      padding: 16px 24px 24px;
+      gap: 4px;
+      z-index: 99;
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .mobile-menu.open { display: flex; opacity: 1; transform: translateY(0); }
+    .mobile-menu a {
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--text); }
+    .mobile-menu-cta { color: var(--orange) !important; font-weight: 600 !important; margin-top: 8px; }
+
+    /* ── LAYOUT UTILS ── */
+    .section { position: relative; z-index: 1; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(255,92,0,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      background: var(--orange-dim);
+      border: 1px solid rgba(255,92,0,0.2);
+      border-radius: 100px;
+      padding: 6px 16px;
+      margin-bottom: 32px;
+    }
+
+    .hero-commission {
+      font-size: clamp(56px, 10vw, 96px);
+      font-weight: 800;
+      letter-spacing: -3px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .hero-commission .pct { color: var(--orange); }
+
+    .hero-sub {
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-2);
+      max-width: 440px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #CC4900; transform: translateY(-2px); }
+
+    .hero-micro {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-3);
+      margin-top: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── CALCULATOR ── */
+    .calculator {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      margin-top: 64px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .calc-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .calc-body {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .calc-slider-wrap { flex: 1; }
+
+    .calc-referrals-display {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-2);
+      margin-bottom: 16px;
+    }
+
+    .calc-referrals-display span {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 4px;
+      appearance: none;
+      background: var(--bg3);
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--orange);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 3px var(--orange-glow);
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      box-shadow: 0 0 0 6px var(--orange-glow);
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+      background: linear-gradient(to right, var(--orange) var(--progress, 30%), var(--bg3) var(--progress, 30%));
+      height: 4px;
+      border-radius: 4px;
+    }
+
+    /* Plan selector */
+    .calc-plans {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .calc-plan-btn {
+      flex: 1;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      text-align: center;
+    }
+
+    .calc-plan-btn.active {
+      border-color: rgba(255,92,0,0.4);
+      background: var(--orange-dim);
+    }
+
+    .calc-plan-name {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 2px;
+    }
+
+    .calc-plan-btn.active .calc-plan-name { color: var(--orange); }
+
+    .calc-plan-price {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-2);
+    }
+
+    .calc-plan-btn.active .calc-plan-price { color: var(--text); }
+
+    .calc-result { text-align: right; }
+
+    .calc-amount {
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .calc-per {
+      font-size: 14px;
+      color: var(--text-3);
+      margin-top: 4px;
+      font-family: var(--font-mono);
+    }
+
+    .calc-breakdown {
+      display: flex;
+      gap: 24px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      justify-content: center;
+    }
+
+    .calc-breakdown-item {
+      text-align: center;
+    }
+
+    .calc-breakdown-item .val {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      display: block;
+    }
+
+    .calc-breakdown-item .lbl {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text-3);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-tag {
+      display: inline-flex;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      background: var(--orange-dim);
+      border: 1px solid rgba(255,92,0,0.15);
+      border-radius: 100px;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--text-2);
+      line-height: 1.7;
+      max-width: 500px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .how-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .how-card:hover {
+      border-color: rgba(255,92,0,0.2);
+      transform: translateY(-4px);
+    }
+
+    .how-card-visual {
+      height: 180px;
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .how-card-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(255,92,0,0.06) 0%, transparent 70%);
+    }
+
+    .how-visual-link {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .how-visual-link .link-you { color: var(--orange); font-weight: 700; }
+
+    .how-visual-share {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .how-platform-pills {
+      display: flex;
+      gap: 8px;
+    }
+
+    .platform-pill {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-2);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .platform-pill .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .how-visual-payout {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 24px;
+      position: relative;
+      z-index: 1;
+      min-width: 200px;
+    }
+
+    .payout-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .payout-col .payout-lbl {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 4px;
+    }
+
+    .payout-col .payout-val {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .payout-col .payout-val.green { color: var(--green); }
+
+    .payout-btn {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .how-card-body { padding: 28px; text-align: left; }
+
+    .how-step-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+
+    .how-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .how-card-desc {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+
+    /* ── TARGETS ── */
+    .targets-section { padding: 80px 0 120px; }
+
+    .targets-inner {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .targets-left { padding-top: 8px; }
+    .targets-left .section-sub { max-width: 260px; }
+
+    .targets-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .target-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .target-card:hover {
+      border-color: rgba(255,92,0,0.2);
+      transform: translateY(-3px);
+    }
+
+    .target-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--orange-dim);
+      border: 1px solid rgba(255,92,0,0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .target-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .target-desc {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    /* ── AVANTAGES ── */
+    .avantages-section {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .avantages-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 32px;
+    }
+
+    .avantage-item {
+      padding: 24px 20px;
+      background: var(--bg2);
+      border-radius: 0;
+    }
+
+    .avantage-item:first-child { border-radius: 16px 0 0 16px; }
+    .avantage-item:last-child { border-radius: 0 16px 16px 0; }
+
+    .avantage-num {
+      font-size: clamp(28px, 3vw, 36px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .avantage-lbl {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .avantage-desc {
+      font-size: 12px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    /* ── FAQ ── */
+    .faq-section { padding: 120px 0; }
+
+    .faq-inner {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .faq-left { position: sticky; top: 100px; }
+    .faq-left .section-sub { margin-bottom: 32px; }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text);
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,92,0,0.4); background: var(--orange-dim); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px 0;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.2s;
+      user-select: none;
+      list-style: none;
+    }
+
+    .faq-question:hover { color: var(--orange); }
+
+    .faq-toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+      color: var(--text-2);
+      transition: transform 0.3s, border-color 0.2s;
+    }
+
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+      border-color: rgba(255,92,0,0.3);
+      color: var(--orange);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.8;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(255,92,0,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .final-cta-inner {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 72px 48px;
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-cta .section-title { margin-bottom: 16px; }
+
+    .final-cta p {
+      font-size: 16px;
+      color: var(--text-2);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cta-checks {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cta-check {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-3);
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cta-check::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer-logo span { color: var(--orange); }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-3);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--text-2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .avantages-grid { grid-template-columns: repeat(2, 1fr); }
+      .avantage-item:nth-child(1) { border-radius: 16px 0 0 0; }
+      .avantage-item:nth-child(2) { border-radius: 0 16px 0 0; }
+      .avantage-item:nth-child(3) { border-radius: 0 0 0 16px; }
+      .avantage-item:nth-child(4) { border-radius: 0 0 16px 0; }
+      .faq-inner { grid-template-columns: 1fr; gap: 40px; }
+      .faq-left { position: static; }
+      .targets-inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .hamburger { display: flex; }
+      .nav-links { display: none; }
+      .container { padding: 0 24px; }
+      .hero { padding: 120px 24px 80px; }
+      .how-grid { grid-template-columns: 1fr; }
+      .targets-grid { grid-template-columns: 1fr; }
+      .avantages-grid { grid-template-columns: 1fr; }
+      .avantage-item { border-radius: 0 !important; }
+      .avantage-item:first-child { border-radius: 16px 16px 0 0 !important; }
+      .avantage-item:last-child { border-radius: 0 0 16px 16px !important; }
+      .calc-body { grid-template-columns: 1fr; text-align: center; }
+      .calc-result { text-align: center; }
+      .calculator { padding: 32px 24px; }
+      .final-cta-inner { padding: 48px 24px; }
+      footer { flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">Thumb<span class="nav-logo-dot">AI</span></a>
+  <div class="nav-links">
+    <a href="affiliation.html">Affiliation</a>
+    <a href="index.html#hero-video">Comment ça marche</a>
+    <a href="ressources.html">Ressources</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="#" class="nav-cta">Réserver une session démo →</a>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="affiliation.html" onclick="closeMenu()">Affiliation</a>
+  <a href="index.html#hero-video" onclick="closeMenu()">Comment ça marche</a>
+  <a href="ressources.html" onclick="closeMenu()">Ressources</a>
+  <a href="pricing.html" onclick="closeMenu()">Pricing</a>
+  <a href="#" class="mobile-menu-cta" onclick="closeMenu()">Réserver une session démo →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero section">
+  <div class="hero-glow"></div>
+  <div style="position:relative;z-index:1;width:100%;">
+    <div class="hero-badge">⬡ Programme Affiliation</div>
+    <div class="hero-commission">
+      <span class="pct">30%</span> de commission.<br>Tous les mois. À vie.
+    </div>
+    <p class="hero-sub" style="margin-top:24px;">Ton audience. Notre outil. Ta commission, à vie.</p>
+    <p class="hero-desc">Chaque créateur que tu parraines te rapporte 30% de son abonnement, tant qu'il reste client.</p>
+    <a href="#rejoindre" class="nav-cta" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;font-size:15px;border-radius:8px;text-decoration:none;">Obtenir mon accès bêta →</a>
+    <p class="hero-micro">✓ Gratuit · ✓ Lien en 2 minutes · ✓ Paiement mensuel</p>
+
+    <!-- CALCULATOR -->
+    <div class="calculator">
+      <div class="calc-label">Calcule tes revenus</div>
+      <div class="calc-plans">
+        <div class="calc-plan-btn active" onclick="selectPlan(this, 49)" data-price="49">
+          <div class="calc-plan-name">Starter</div>
+          <div class="calc-plan-price">49€/mois</div>
+        </div>
+        <div class="calc-plan-btn" onclick="selectPlan(this, 99)" data-price="99">
+          <div class="calc-plan-name">Creator</div>
+          <div class="calc-plan-price">99€/mois</div>
+        </div>
+        <div class="calc-plan-btn" onclick="selectPlan(this, 149)" data-price="149">
+          <div class="calc-plan-name">Studio</div>
+          <div class="calc-plan-price">149€/mois</div>
+        </div>
+      </div>
+      <div class="calc-body">
+        <div class="calc-slider-wrap">
+          <div class="calc-referrals-display">
+            <span id="referrals-count">50</span> créateurs parrainés
+          </div>
+          <input
+            type="range"
+            id="referrals-slider"
+            min="1"
+            max="500"
+            value="50"
+            oninput="updateCalc(this.value)"
+          >
+        </div>
+        <div class="calc-result">
+          <div class="calc-amount" id="calc-amount">735€</div>
+          <div class="calc-per">par mois</div>
+        </div>
+      </div>
+      <div class="calc-breakdown">
+        <div class="calc-breakdown-item">
+          <span class="val" id="calc-annual">8 820€</span>
+          <span class="lbl">par an</span>
+        </div>
+        <div class="calc-breakdown-item">
+          <span class="val">30%</span>
+          <span class="lbl">commission</span>
+        </div>
+        <div class="calc-breakdown-item">
+          <span class="val" id="calc-plan-display">49€</span>
+          <span class="lbl">plan sélectionné</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section section">
+  <div class="container">
+    <div class="section-tag">Process</div>
+    <h2 class="section-title">Comment ça marche ?</h2>
+
+    <div class="how-grid">
+
+      <div class="how-card">
+        <div class="how-card-visual">
+          <div class="how-visual-link">
+            thumbai.fr/<span class="link-you">via?=ton_lien</span>
+          </div>
+        </div>
+        <div class="how-card-body">
+          <div class="how-step-num">ÉTAPE 01</div>
+          <div class="how-card-title">Inscris-toi en 2 minutes.</div>
+          <p class="how-card-desc">Crée ton compte affilié, obtiens ton lien personnalisé instantanément. Zéro configuration. Zéro technique.</p>
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="how-card-visual">
+          <div class="how-visual-share">
+            <div class="how-platform-pills">
+              <div class="platform-pill"><div class="dot"></div>YouTube</div>
+              <div class="platform-pill"><div class="dot"></div>Newsletter</div>
+            </div>
+            <div class="how-platform-pills" style="margin-top:4px;">
+              <div class="platform-pill"><div class="dot"></div>Instagram</div>
+              <div class="platform-pill"><div class="dot"></div>Podcast</div>
+            </div>
+          </div>
+        </div>
+        <div class="how-card-body">
+          <div class="how-step-num">ÉTAPE 02</div>
+          <div class="how-card-title">Partage ton lien.</div>
+          <p class="how-card-desc">Dans tes vidéos, ta newsletter, tes stories, tes formations, partout où ton audience de créateurs te suit.</p>
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="how-card-visual">
+          <div class="how-visual-payout">
+            <div class="payout-row">
+              <div class="payout-col">
+                <div class="payout-lbl">Disponible</div>
+                <div class="payout-val">86€</div>
+              </div>
+              <div class="payout-col">
+                <div class="payout-lbl">En attente</div>
+                <div class="payout-val green">527€</div>
+              </div>
+              <button class="payout-btn">Retrait</button>
+            </div>
+          </div>
+        </div>
+        <div class="how-card-body">
+          <div class="how-step-num">ÉTAPE 03</div>
+          <div class="how-card-title">Touche ta commission.</div>
+          <p class="how-card-desc">30% récurrents, tous les mois, tant que le créateur est abonné. La commission ne s'arrête jamais.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TARGETS -->
+<section class="targets-section section">
+  <div class="container">
+    <div class="targets-inner">
+      <div class="targets-left">
+        <div class="section-tag">Pour qui ?</div>
+        <h2 class="section-title">C'est fait pour toi si…</h2>
+        <p class="section-sub">Ton audience parle de YouTube, de création de contenu, de croissance, ou si tu formes des créateurs.</p>
+      </div>
+      <div class="targets-grid">
+        <div class="target-card">
+          <div class="target-icon">▶</div>
+          <div class="target-name">YouTubeurs</div>
+          <p class="target-desc">Mentionne ThumbAI dans une vidéo sur le packaging, la croissance YouTube ou le CTR. Ton lien dans la description fait le reste.</p>
+        </div>
+        <div class="target-card">
+          <div class="target-icon">✉</div>
+          <div class="target-name">Newsletteurs</div>
+          <p class="target-desc">Une recommandation dans ta newsletter créateurs. Un article sur le packaging YouTube. Ton lien affilié en CTA.</p>
+        </div>
+        <div class="target-card">
+          <div class="target-icon">◉</div>
+          <div class="target-name">Formateurs</div>
+          <p class="target-desc">Tu formes des créateurs à YouTube, à la croissance, au personal branding ? Intègre ThumbAI dans tes ressources recommandées.</p>
+        </div>
+        <div class="target-card">
+          <div class="target-icon">◈</div>
+          <div class="target-name">Créateurs multi-réseaux</div>
+          <p class="target-desc">Instagram, TikTok, LinkedIn, si ton audience parle de contenu et de croissance, ThumbAI est pertinent pour elle.</p>
+        </div>
+        <div class="target-card">
+          <div class="target-icon">⌘</div>
+          <div class="target-name">Rédacteurs & blogueurs</div>
+          <p class="target-desc">Un article sur le CTR YouTube, une comparaison d'outils, un guide packaging, ton lien dans le contenu converti durablement.</p>
+        </div>
+        <div class="target-card">
+          <div class="target-icon">◎</div>
+          <div class="target-name">Podcasteurs</div>
+          <p class="target-desc">Un épisode sur YouTube, la croissance, le packaging ? Mentionne ThumbAI. Ton lien en show notes. Commission à vie.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANTAGES -->
+<section class="avantages-section section">
+  <div class="container">
+    <div class="section-tag" style="display:block;text-align:center;margin-bottom:16px;">Pourquoi ThumbAI</div>
+    <h2 class="section-title" style="text-align:center;max-width:400px;margin:0 auto;font-size:clamp(20px,3vw,28px);">Un programme conçu pour convertir.</h2>
+    <div class="avantages-grid">
+      <div class="avantage-item">
+        <div class="avantage-num">30%</div>
+        <div class="avantage-lbl">Récurrent à vie</div>
+        <p class="avantage-desc">Pas une commission unique. 30% tous les mois, tant que le créateur est abonné.</p>
+      </div>
+      <div class="avantage-item">
+        <div class="avantage-num">90j</div>
+        <div class="avantage-lbl">Cookie tracking</div>
+        <p class="avantage-desc">Si quelqu'un clique ton lien et s'abonne dans les 90 jours, tu touches la commission.</p>
+      </div>
+      <div class="avantage-item">
+        <div class="avantage-num">2min</div>
+        <div class="avantage-lbl">Setup complet</div>
+        <p class="avantage-desc">Compte créé, lien généré, tableau de bord actif. En 2 minutes, tu es opérationnel.</p>
+      </div>
+      <div class="avantage-item">
+        <div class="avantage-num">J+1</div>
+        <div class="avantage-lbl">Dashboard temps réel</div>
+        <p class="avantage-desc">Clics, inscriptions, commissions en attente et disponibles, tout visible en temps réel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section section">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-left">
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-title">Des questions ?</h2>
+        <p class="section-sub" style="margin-bottom:32px;">Si tu ne trouves pas ce que tu cherches, contacte-nous directement.</p>
+        <a href="mailto:affiliation@thumbai.fr" class="btn-outline">Nous contacter →</a>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Quel est le taux de commission ?
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            30% récurrents sur chaque abonnement généré. Si un créateur prend le plan Creator à 30€/mois, tu touches 9€ par mois, chaque mois, tant qu'il reste abonné. Il n'y a pas de limite de temps ni de plafond.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Comment fonctionnent les paiements ?
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            Les commissions sont calculées le 1er de chaque mois et virées dans les 5 jours ouvrés via Stripe. Le seuil minimum de retrait est de 20€. Tu reçois un récapitulatif détaillé par email à chaque paiement.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Que se passe-t-il si quelqu'un s'inscrit via mon lien mais s'abonne plus tard ?
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            Le cookie dure 90 jours. Si la personne clique ton lien aujourd'hui et s'abonne dans les 3 mois, même sans recliquer, tu touches la commission. Si elle upgrade d'un plan gratuit vers un plan payant dans cette fenêtre, la commission est également déclenchée.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Est-ce que je peux partager mon lien partout ?
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            Oui, YouTube, newsletter, Instagram, TikTok, LinkedIn, blog, podcast, formation. La seule restriction : tu ne peux pas faire de publicité payante sur les termes de marque ThumbAI (Google Ads, Meta Ads avec "ThumbAI" en mot-clé direct).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Y a-t-il une limite au nombre de filleuls ?
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            Aucune limite. 10 filleuls ou 1 000, le taux reste le même et il n'y a pas de plafond de commission mensuelle.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Comment puis-je suivre mes performances ?
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            Ton tableau de bord affilié donne accès en temps réel au nombre de clics, aux inscriptions, aux conversions payantes, aux commissions en attente et aux commissions disponibles pour retrait. Les données sont mises à jour toutes les heures.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta section" id="rejoindre">
+  <div class="container">
+    <div class="final-cta-inner">
+      <div class="section-tag">Rejoindre</div>
+      <h2 class="section-title">Commence à gagner<br>dès ce soir.</h2>
+      <p>Ton lien affilié est prêt en 2 minutes. La première commission arrive dès que quelqu'un s'abonne via ton lien.</p>
+      <div class="cta-row">
+        <a href="#" class="nav-cta" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:15px;border-radius:8px;text-decoration:none;">Obtenir mon accès bêta →</a>
+        <div class="cta-checks">
+          <span class="cta-check">Gratuit</span>
+          <span class="cta-check">2 minutes</span>
+          <span class="cta-check">30% récurrents à vie</span>
+          <span class="cta-check">Aucun engagement</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="footer-logo">Thumb<span style="color:var(--orange)">AI</span></a>
+  <div class="footer-links">
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="#">Politique de confidentialité</a>
+    <a href="#">Contact</a>
+  </div>
+  <span class="footer-copy">© 2026 ThumbAI</span>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Hamburger
+  function toggleMenu() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  // Calculator
+  let currentPrice = 49;
+  const COMMISSION = 0.30;
+
+  function selectPlan(btn, price) {
+    document.querySelectorAll('.calc-plan-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentPrice = price;
+    document.getElementById('calc-plan-display').textContent = price + '€';
+    updateCalc(document.getElementById('referrals-slider').value);
+  }
+
+  function updateCalc(val) {
+    const n = parseInt(val);
+    const monthly = Math.round(n * currentPrice * COMMISSION);
+    const annual = monthly * 12;
+
+    document.getElementById('referrals-count').textContent = n;
+    document.getElementById('calc-amount').textContent = monthly.toLocaleString('fr-FR') + '€';
+    document.getElementById('calc-annual').textContent = annual.toLocaleString('fr-FR') + '€';
+
+    const slider = document.getElementById('referrals-slider');
+    const pct = ((n - 1) / (500 - 1)) * 100;
+    slider.style.setProperty('--progress', pct + '%');
+  }
+
+  // Init
+  updateCalc(50);
+
+  // FAQ
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+</body>
+</html>
