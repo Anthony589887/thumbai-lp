@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C'est quoi le Vide Narratif — et pourquoi il force le clic | ThumbAI</title>
+  <meta name="description" content="Deux vidéos. Même sujet. Même qualité. L'une fait 2% de CTR, l'autre 11%. La différence n'est pas dans la vidéo. Elle est dans les 1,5 secondes qui précèdent le clic.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Lora:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:        #0A0A0A;
+      --bg2:       #111111;
+      --bg3:       #161616;
+      --border:    #1A1A1A;
+      --border2:   #242424;
+      --text:      #F2F2F2;
+      --text-2:    #A0A0A0;
+      --text-3:    #555555;
+      --orange:    #FF5C00;
+      --orange-d:  #CC4900;
+      --font:      'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+      --font-serif:'Lora', serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--orange); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--orange) !important;
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      transition: opacity .2s, transform .2s !important;
+    }
+    .nav-cta:hover { opacity: 0.88 !important; transform: translateY(-1px) !important; }
+
+    /* ── PROGRESS BAR ── */
+    .progress-bar {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      height: 2px;
+      background: var(--orange);
+      z-index: 99;
+      transition: width .1s linear;
+      width: 0%;
+    }
+
+    /* ── ARTICLE LAYOUT ── */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── ARTICLE HEADER ── */
+    .article-header {
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--text-3);
+      margin-bottom: 28px;
+    }
+
+    .article-breadcrumb a {
+      color: var(--text-3);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .article-breadcrumb a:hover { color: var(--text-2); }
+
+    .article-tag {
+      display: inline-flex;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      background: rgba(255,92,0,0.08);
+      border: 1px solid rgba(255,92,0,0.15);
+      border-radius: 6px;
+      padding: 4px 10px;
+      margin-bottom: 24px;
+    }
+
+    .article-header h1 {
+      font-family: var(--font);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .article-header h1 em {
+      font-style: italic;
+      font-family: var(--font-serif);
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    .article-intro {
+      font-size: 19px;
+      color: var(--text-2);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-3);
+      letter-spacing: 0.5px;
+    }
+
+    .article-meta span { display: flex; align-items: center; gap: 6px; }
+
+    /* ── ARTICLE BODY ── */
+    .article-body {
+      padding-bottom: 80px;
+    }
+
+    .article-body h2 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.25;
+      color: var(--text);
+      margin: 56px 0 20px;
+    }
+
+    .article-body h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 36px 0 14px;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: var(--text-2);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .article-body p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-left: 3px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+
+    .callout p {
+      font-size: 16px;
+      color: var(--text);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .callout-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+
+    /* ── EXAMPLE BLOCK ── */
+    .example-block {
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 32px 0;
+    }
+
+    .example-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 20px;
+    }
+
+    .example-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .example-col {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .example-col.highlight {
+      border-color: rgba(255,92,0,0.25);
+      background: rgba(255,92,0,0.04);
+    }
+
+    .example-col-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 8px;
+    }
+
+    .example-col.highlight .example-col-label { color: var(--orange); }
+
+    .example-col p {
+      font-size: 14px;
+      color: var(--text-2);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .example-col.highlight p { color: var(--text); }
+
+    .example-arrow {
+      color: var(--text-3);
+      font-size: 20px;
+      padding-top: 32px;
+      text-align: center;
+    }
+
+    .example-result {
+      background: rgba(255,92,0,0.06);
+      border: 1px solid rgba(255,92,0,0.15);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 4px;
+    }
+
+    .example-result p {
+      font-size: 13px;
+      color: var(--orange);
+      margin: 0;
+      font-weight: 600;
+    }
+
+    /* ── VN DIAGRAM LARGE ── */
+    .vn-diagram-large {
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-radius: 16px;
+      padding: 40px;
+      margin: 32px 0;
+      text-align: center;
+    }
+
+    .vn-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 32px;
+    }
+
+    .vn-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .vn-step-box {
+      width: 120px;
+      height: 72px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .vn-step-box.filled {
+      background: rgba(255,92,0,0.08);
+      border: 1px solid rgba(255,92,0,0.25);
+    }
+
+    .vn-step-box.empty {
+      background: rgba(255,255,255,0.02);
+      border: 1px dashed rgba(255,255,255,0.08);
+    }
+
+    .vn-step-title {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+
+    .vn-step-box.empty .vn-step-title { color: var(--text-3); }
+
+    .vn-step-sub {
+      font-size: 11px;
+      color: var(--text-3);
+    }
+
+    .vn-step-label {
+      font-size: 12px;
+      color: var(--text-3);
+    }
+
+    .vn-connector {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255,92,0,0.3), rgba(255,92,0,0.1));
+      margin-bottom: 22px;
+    }
+
+    .vn-connector.dashed {
+      background: none;
+      border-bottom: 1px dashed rgba(255,255,255,0.08);
+    }
+
+    .vn-big-q {
+      font-size: 36px;
+      color: var(--text-3);
+      line-height: 1;
+    }
+
+    .vn-conclusion {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--orange);
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      line-height: 1.6;
+    }
+
+    /* ── COUNTER-EXAMPLE ── */
+    .counter-block {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 32px 0;
+    }
+
+    .counter-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .counter-col {
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .counter-col.bad {
+      background: rgba(248, 113, 113, 0.05);
+      border: 1px solid rgba(248, 113, 113, 0.15);
+    }
+
+    .counter-col.good {
+      background: rgba(34, 197, 94, 0.05);
+      border: 1px solid rgba(34, 197, 94, 0.15);
+    }
+
+    .counter-col-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .counter-col.bad .counter-col-label { color: #f87171; }
+    .counter-col.good .counter-col-label { color: #22c55e; }
+
+    .counter-col p {
+      font-size: 13px;
+      color: var(--text-2);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .counter-verdict {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+    }
+
+    .counter-verdict p {
+      font-size: 13px;
+      color: var(--text-3);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── TENSION TYPES ── */
+    .tension-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .tension-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 20px;
+    }
+
+    .tension-number {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .tension-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .tension-desc {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .tension-example {
+      font-size: 12px;
+      color: var(--text-3);
+      font-style: italic;
+      line-height: 1.5;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 48px 0;
+    }
+
+    /* ── KEY INSIGHT ── */
+    .key-insight {
+      background: var(--bg2);
+      border: 1px solid rgba(255,92,0,0.15);
+      border-radius: 16px;
+      padding: 36px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .key-insight p {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .key-insight p em {
+      color: var(--orange);
+      font-style: italic;
+    }
+
+    /* ── CTA INLINE ── */
+    .cta-inline {
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-radius: 16px;
+      padding: 40px;
+      margin: 56px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-inline::before {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(ellipse, rgba(255,92,0,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-inline h3 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-inline p {
+      font-size: 15px;
+      color: var(--text-2);
+      margin-bottom: 28px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-d);
+      transform: translateY(-2px);
+    }
+
+    .cta-micro {
+      font-size: 12px;
+      color: var(--text-3);
+      margin-top: 14px;
+      font-family: var(--font-mono);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── RELATED ── */
+    .related-section {
+      border-top: 1px solid var(--border);
+      padding: 56px 0 80px;
+    }
+
+    .related-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .related-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      text-decoration: none;
+      transition: border-color .3s, transform .3s;
+    }
+
+    .related-card:hover {
+      border-color: var(--border2);
+      transform: translateY(-2px);
+    }
+
+    .related-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--text-3);
+      margin-bottom: 10px;
+    }
+
+    .related-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .related-card p {
+      font-size: 13px;
+      color: var(--text-2);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer-logo span { color: var(--orange); }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-3);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover { color: var(--text-2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .example-row { grid-template-columns: 1fr; }
+      .example-arrow { display: none; }
+      .counter-row { grid-template-columns: 1fr; }
+      .tension-grid { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .vn-row { gap: 0; }
+      .vn-step-box { width: 90px; height: 60px; }
+      .vn-connector { width: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="https://thumbai.fr" class="nav-logo">Thumb<span>AI</span></a>
+  <div class="nav-links">
+    <a href="https://thumbai.fr">Produit</a>
+    <a href="https://thumbai.fr/pricing.html">Pricing</a>
+    <a href="https://resources.thumbai.fr">Ressources</a>
+    <a href="https://thumbai.fr/#" class="nav-cta">Obtenir mon accès bêta →</a>
+  </div>
+</nav>
+
+<!-- ARTICLE -->
+<div class="article-wrap">
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-breadcrumb">
+      <a href="https://resources.thumbai.fr">Ressources</a>
+      <span>/</span>
+      <span>Concept fondateur</span>
+    </div>
+    <div class="article-tag">⬡ Concept fondateur</div>
+    <h1>C'est quoi le Vide Narratif —<br>et pourquoi il <em>force le clic</em></h1>
+    <p class="article-intro">Deux vidéos. Même sujet. Même qualité. L'une fait 2% de CTR. L'autre fait 11%. La différence n'est pas dans la vidéo. Elle est dans les 1,5 secondes qui précèdent le clic.</p>
+    <div class="article-meta">
+      <span>⏱ 8 min de lecture</span>
+      <span>· Niveau : Fondamental</span>
+      <span>· Mars 2026</span>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <article class="article-body">
+
+    <h2>Le mécanisme neurologique du clic</h2>
+
+    <p>Le cerveau humain scanne un feed YouTube en deux temps séquentiels — et non superposables.</p>
+
+    <p><strong>Temps 1 — 0,5 seconde : traitement visuel pré-cognitif.</strong> La miniature entre dans le champ de vision. Le cerveau ne "lit" pas — il détecte. Il cherche un visage humain (signal social prioritaire), un contraste élevé, une anomalie ou une rupture de pattern. Cette étape est inconsciente. Le spectateur ne sait pas encore qu'il regarde une miniature.</p>
+
+    <p><strong>Temps 2 — 1 à 2 secondes : traitement cognitif.</strong> Si la miniature a passé le filtre visuel, le cerveau lit le titre. Il cherche une réponse à une question inconsciente : <strong>"est-ce que cette vidéo contient quelque chose que je ne peux pas déduire par moi-même ?"</strong> Si oui, le clic a une raison d'être. Si non, il n'y en a aucune.</p>
+
+    <div class="key-insight">
+      <p>Le clic est une <em>décision de réduction d'incertitude</em>.<br>Pas une décision de consommation de contenu.</p>
+    </div>
+
+    <p>Le spectateur ne clique pas parce qu'il veut voir une bonne vidéo. Il clique parce qu'il y a une information qu'il ne peut pas obtenir autrement qu'en regardant. Cette distinction change tout dans la conception du packaging.</p>
+
+    <h2>Ce qu'est le Vide Narratif</h2>
+
+    <p>Le Vide Narratif est le mécanisme le plus puissant du packaging YouTube. Ce n'est pas une technique. C'est une structure narrative.</p>
+
+    <div class="callout">
+      <div class="callout-label">Définition</div>
+      <p>Un packaging à Vide Narratif est une unité narrative incomplète construite sur deux éléments : le titre raconte l'Acte 1, la miniature montre l'Acte 3. L'Acte 2 — le "comment", le "pourquoi", le "milieu" — est délibérément absent des deux.</p>
+    </div>
+
+    <div class="vn-diagram-large">
+      <div class="vn-row">
+        <div class="vn-step">
+          <div class="vn-step-box filled">
+            <div class="vn-step-title">Acte 1</div>
+            <div class="vn-step-sub">Titre</div>
+          </div>
+          <div class="vn-step-label">Contexte · Enjeu · Tension</div>
+        </div>
+        <div class="vn-connector"></div>
+        <div class="vn-step">
+          <div class="vn-step-box empty">
+            <div class="vn-big-q">?</div>
+          </div>
+          <div class="vn-step-label" style="color:var(--text-3)">Absent des deux</div>
+        </div>
+        <div class="vn-connector dashed"></div>
+        <div class="vn-step">
+          <div class="vn-step-box filled">
+            <div class="vn-step-title">Acte 3</div>
+            <div class="vn-step-sub">Miniature</div>
+          </div>
+          <div class="vn-step-label">Résultat · Révélation</div>
+        </div>
+      </div>
+      <div class="vn-conclusion">
+        Le spectateur comprend le début. Il voit la fin. Il lui manque le milieu.<br>
+        Ce vide est le mécanisme exact qui force le clic.
+      </div>
+    </div>
+
+    <h2>L'exemple canonique</h2>
+
+    <p>C'est l'exemple le plus cité parce qu'il est le plus pur. Décortiquons-le couche par couche.</p>
+
+    <div class="example-block">
+      <div class="example-label">Exemple canonique — Vide Narratif parfait</div>
+
+      <div class="example-row">
+        <div class="example-col highlight">
+          <div class="example-col-label">Titre — Acte 1</div>
+          <p>"Je trade avec 50€ pour prouver que c'est pas de la chance"</p>
+        </div>
+        <div class="example-arrow">→</div>
+        <div class="example-col highlight">
+          <div class="example-col-label">Miniature — Acte 3</div>
+          <p>"+1 247€" en grand. Visage du créateur en état de choc.</p>
+        </div>
+      </div>
+
+      <div class="example-row">
+        <div class="example-col">
+          <div class="example-col-label">Ce que le titre donne</div>
+          <p>Contexte (50€), enjeu (prouver quelque chose), tension (est-ce de la chance ou pas ?)</p>
+        </div>
+        <div class="example-arrow">→</div>
+        <div class="example-col">
+          <div class="example-col-label">Ce que la miniature donne</div>
+          <p>Un résultat spectaculaire (+1 247€) et une réaction émotionnelle. L'Acte 3 pur.</p>
+        </div>
+      </div>
+
+      <div class="example-result">
+        <p>Acte 2 absent : comment est-il passé de 50€ à 1 247€ ? → Le spectateur DOIT cliquer pour comprendre.</p>
+      </div>
+    </div>
+
+    <h2>Le contre-exemple qui détruit le CTR</h2>
+
+    <p>Comprendre le Vide Narratif, c'est aussi comprendre son opposé exact — le packaging qui révèle son propre résultat.</p>
+
+    <div class="counter-block">
+      <div class="example-label">Contre-exemple — Zéro vide narratif</div>
+
+      <div class="counter-row">
+        <div class="counter-col bad">
+          <div class="counter-col-label">✕ Version qui tue le CTR</div>
+          <p>"Comment j'ai transformé 50€ en 1 000€ en 30 jours de trading"</p>
+        </div>
+        <div class="counter-col good">
+          <div class="counter-col-label">✓ Version à Vide Narratif</div>
+          <p>"Je trade avec 50€ pour prouver que c'est pas de la chance"</p>
+        </div>
+      </div>
+
+      <div class="counter-verdict">
+        <p>Dans la version mauvaise : l'Acte 1 ET l'Acte 3 sont dans le titre. Le résultat est connu. La miniature n'a rien à révéler. Il n'y a pas de vide — il n'y a aucune raison de cliquer.</p>
+      </div>
+    </div>
+
+    <h2>Les 5 formes de tension qui créent le clic</h2>
+
+    <p>La tension non résolue n'est pas une formule unique. Elle peut prendre plusieurs formes. Toutes sont valides. Aucune n'est supérieure par sa forme grammaticale.</p>
+
+    <div class="tension-grid">
+      <div class="tension-card">
+        <div class="tension-number">01</div>
+        <div class="tension-name">La déclaration à enjeu ouvert</div>
+        <div class="tension-desc">Pas une question. Une affirmation dont la conséquence est inconnue. La forme est déclarative mais la tension est maximale.</div>
+        <div class="tension-example">"Je quitte mon CDI pour YouTube" → qu'est-ce qui s'est passé ?</div>
+      </div>
+
+      <div class="tension-card">
+        <div class="tension-number">02</div>
+        <div class="tension-name">L'enjeu chiffré sans résultat</div>
+        <div class="tension-desc">Un chiffre comme contrainte ou prémisse, jamais comme conclusion. Le chiffre ancre la réalité. L'absence de résultat crée le vide.</div>
+        <div class="tension-example">"Je vis avec 5€ par jour pendant 30 jours" → ça a marché ?</div>
+      </div>
+
+      <div class="tension-card">
+        <div class="tension-number">03</div>
+        <div class="tension-name">La contre-intuition</div>
+        <div class="tension-desc">Une affirmation qui va à l'encontre de ce que le spectateur croit. La contradiction entre l'action et le résultat attendu force la vérification.</div>
+        <div class="tension-example">"J'ai supprimé tous mes réseaux sociaux — mon business a grandi"</div>
+      </div>
+
+      <div class="tension-card">
+        <div class="tension-number">04</div>
+        <div class="tension-name">La conséquence irréversible</div>
+        <div class="tension-desc">Un enjeu personnel dont les conséquences ne peuvent pas être annulées. L'irréversibilité amplifie l'enjeu.</div>
+        <div class="tension-example">"J'ai tout misé sur ce trade" → perdu ou gagné ?</div>
+      </div>
+
+      <div class="tension-card">
+        <div class="tension-number">05</div>
+        <div class="tension-name">L'ambiguïté contrôlée</div>
+        <div class="tension-desc">Un mot ou une phrase intentionnellement à double sens. L'ambiguïté est une question sans la poser.</div>
+        <div class="tension-example">"Ce retour va me coûter" → coûter comment ? financièrement ? émotionnellement ?</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>Ce qu'est un bon titre en 2026</h2>
+
+    <p>Un bon titre n'est pas un titre "accrocheur". Ce concept est inutile. Un bon titre est un titre qui remplit quatre critères simultanément.</p>
+
+    <p><strong>A. Il crée une tension non résolue</strong> dont la résolution est exclusivement dans la vidéo. Le spectateur ne peut pas deviner la fin sans regarder.</p>
+
+    <p><strong>B. Il contient un enjeu identifiable</strong> — un risque, une somme, une transformation, une durée, une conséquence. L'enjeu rend la tension réelle. Sans enjeu, la curiosité est abstraite et fragile.</p>
+
+    <p><strong>C. Il ne révèle pas son propre résultat.</strong> C'est la règle la plus violée. Un titre au passé composé qui révèle le dénouement ("Comment j'ai gagné X") détruit le vide narratif. Un titre au présent ou qui ancre dans le départ préserve l'incertitude.</p>
+
+    <p><strong>D. Il est la première moitié d'une histoire</strong> — structurellement conçu pour être complété par la miniature. Si la miniature ne peut rien ajouter de narratif, le titre a échoué.</p>
+
+    <div class="callout">
+      <div class="callout-label">Les formats qui tuent le CTR de manière systématique</div>
+      <p>"Comment faire X" / "How to X" — le cerveau sait ce qu'il va apprendre, pas de tension.<br>
+      "24h dans ma vie de..." — descriptif pur, pas d'enjeu.<br>
+      "Guide complet de..." — promet une réponse exhaustive, puzzle résolu d'avance.<br>
+      Tout titre avec le résultat explicite — la miniature n'a rien à révéler.<br>
+      Titre de plus de 65 caractères — tronqué sur mobile, le spectateur ne lit pas la fin.</p>
+    </div>
+
+    <h2>Ce qu'est une bonne miniature en 2026</h2>
+
+    <p>La miniature n'est pas une illustration de la vidéo. <strong>C'est la révélation de son Acte 3.</strong></p>
+
+    <p>Elle doit satisfaire cinq critères simultanément : elle complète le titre sans le répéter, elle montre l'état final sans dévoiler le chemin, elle crée un contraste visuel détectable en 0,5 seconde, elle ne contient aucun mot présent dans le titre, et elle est cohérente avec le contenu réel de la vidéo — pas une promesse que la vidéo ne tient pas.</p>
+
+    <p>Ce dernier point est le plus souvent ignoré. Un packaging qui sur-promet génère du CTR mais détruit la rétention. Et YouTube pénalise ce désalignement sémantique en réduisant la distribution — ce qui est pire que pas de clic du tout.</p>
+
+    <div class="key-insight">
+      <p>Le Vide Narratif parfait : le spectateur comprend l'enjeu en lisant le titre. Il voit le résultat dans la miniature. Il lui manque <em>exactement une chose</em> pour que l'histoire soit complète.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>Comment ThumbAI mesure le Vide Narratif</h2>
+
+    <p>Le Vide Narratif est mesurable. ThumbAI l'évalue sur quatre axes : la présence d'un Acte 1 clair dans le titre (contexte + enjeu + tension), la présence d'un Acte 3 dans la miniature (résultat ou révélation visuelle), l'absence de redondance entre les deux, et la cohérence sémantique avec le contenu réel.</p>
+
+    <p>Le résultat est un score sur 100 — disponible avant d'appuyer sur Publier. Pas 48h après, quand le CTR est déjà inscrit dans l'algorithme et qu'il est trop tard pour corriger.</p>
+
+    <!-- CTA INLINE -->
+    <div class="cta-inline">
+      <h3>Mesure le Vide Narratif de ta prochaine vidéo.</h3>
+      <p>Un score sur 100 avant de publier. Titre, miniature, cohérence sémantique — validés en 90 secondes.</p>
+      <a href="https://thumbai.fr/#" class="btn-primary">Obtenir mon accès bêta →</a>
+      <p class="cta-micro">✓ 1 packaging gratuit &nbsp;·&nbsp; ✓ Lecture seule &nbsp;·&nbsp; ✓ Prix early adopters</p>
+    </div>
+
+    <!-- RELATED -->
+    <div class="related-section">
+      <p class="related-label">Articles liés</p>
+      <div class="related-grid">
+        <a href="non-redondance.html" class="related-card">
+          <div class="related-tag">Règle fondamentale</div>
+          <h4>La règle de non-redondance titre / miniature</h4>
+          <p>Quand titre et miniature disent la même chose, le puzzle est résolu avant le clic.</p>
+        </a>
+        <a href="formats-qui-tuent.html" class="related-card">
+          <div class="related-tag">CTR</div>
+          <h4>Les 5 formats de titre qui tuent le CTR systématiquement</h4>
+          <p>Les patterns à éviter — et ce qu'il faut mettre à la place.</p>
+        </a>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://thumbai.fr" class="footer-logo">Thumb<span>AI</span></a>
+  <div class="footer-links">
+    <a href="https://thumbai.fr">Produit</a>
+    <a href="https://resources.thumbai.fr">Ressources</a>
+    <a href="https://thumbai.fr/mentions-legales.html">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+  // Progress bar
+  const progress = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const pct = (scrollTop / docHeight) * 100;
+    progress.style.width = pct + '%';
+  });
+</script>
+
+</body>
+</html>
