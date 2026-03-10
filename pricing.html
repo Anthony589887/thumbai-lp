@@ -515,14 +515,26 @@
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-logo">Thumb<span class="nav-logo-dot">AI</span></a>
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">Thumb<span class="nav-logo-dot">AI</span></a>
   <div class="nav-links">
-    <a href="/#comment">Comment ça marche</a>
+    <a href="index.html">Comment ça marche</a>
     <a href="pricing.html" class="active">Pricing</a>
-    <a href="#" class="nav-cta">Analyser ma chaîne →</a>
+    <a href="affiliation.html">Affiliation</a>
+    <a href="ressources.html">Ressources</a>
+    <a href="#" class="nav-cta">Réserver une session démo →</a>
   </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" onclick="closeMenu()">Comment ça marche</a>
+  <a href="pricing.html" onclick="closeMenu()">Pricing</a>
+  <a href="affiliation.html" onclick="closeMenu()">Affiliation</a>
+  <a href="ressources.html" onclick="closeMenu()">Ressources</a>
+  <a href="#" class="mobile-menu-cta" onclick="closeMenu()">Réserver une session démo →</a>
+</div>
 
 <!-- HERO -->
 <div class="pricing-hero">
