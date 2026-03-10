@@ -988,7 +988,7 @@
     footer { flex-direction: column; gap: 24px; text-align: center; }
     .hero-ctas { flex-direction: column; align-items: stretch; }
   }
-.nav-logo, .footer-logo { font-family: 'Syne', sans-serif !important; }
+.nav-logo, .footer-logo { font-family: 'Syne', sans-serif !important; font-weight: 800 !important; letter-spacing: -0.5px !important; }
 
   /* ═══════════════════════════════════════
      RESPONSIVE — TABLETTE (max 1024px)
@@ -1403,12 +1403,12 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#" class="nav-logo">Thumb<span class="nav-logo-dot">AI</span></a>
+  <a href="index.html" class="nav-logo">Thumb<span class="nav-logo-dot">AI</span></a>
   <div class="nav-links">
-    <a href="affiliation.html">Affiliation</a>
-    <a href="#hero-video">Comment ça marche</a>
-    <a href="ressources.html">Ressources</a>
+    <a href="index.html#hero-video">Comment ça marche</a>
     <a href="pricing.html">Pricing</a>
+    <a href="affiliation.html">Affiliation</a>
+    <a href="ressources.html">Ressources</a>
     <a href="#" class="nav-cta">Réserver une session démo →</a>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -1416,10 +1416,10 @@
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="affiliation.html" onclick="closeMenu()">Affiliation</a>
-  <a href="#hero-video" onclick="closeMenu()">Comment ça marche</a>
-  <a href="ressources.html" onclick="closeMenu()">Ressources</a>
+  <a href="index.html#hero-video" onclick="closeMenu()">Comment ça marche</a>
   <a href="pricing.html" onclick="closeMenu()">Pricing</a>
+  <a href="affiliation.html" onclick="closeMenu()">Affiliation</a>
+  <a href="ressources.html" onclick="closeMenu()">Ressources</a>
   <a href="#" class="mobile-menu-cta" onclick="closeMenu()">Réserver une session démo →</a>
 </div>
 
