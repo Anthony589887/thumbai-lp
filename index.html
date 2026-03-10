@@ -1332,25 +1332,20 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <div style="display:flex; align-items:baseline; gap:8px;">
-    <a href="#" class="nav-logo">Thumb<span class="nav-logo-dot">AI</span></a>
-    <span style="font-family:var(--font-body); font-style:italic; font-size:15px; font-weight:500; color:var(--text-3); letter-spacing:0.3px;">Beta</span>
-  </div>
+  <a href="#" class="nav-logo">Thumb<span class="nav-logo-dot">AI</span></a>
   <div class="nav-links">
-    <a href="#comment">Comment ça marche</a>
-    <a href="#explainer">Pourquoi ça fait cliquer</a>
+    <a href="#hero-video">Comment ça marche</a>
     <a href="pricing.html">Pricing</a>
-    <a href="#" class="nav-cta">Analyser ma chaîne →</a>
+    <a href="#" class="nav-cta">Rejoindre la waitlist →</a>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#comment" onclick="closeMenu()">Comment ça marche</a>
-  <a href="#explainer" onclick="closeMenu()">Pourquoi ça fait cliquer</a>
+  <a href="#hero-video" onclick="closeMenu()">Comment ça marche</a>
   <a href="pricing.html" onclick="closeMenu()">Pricing</a>
-  <a href="#" class="mobile-menu-cta" onclick="closeMenu()">Analyser ma chaîne →</a>
+  <a href="#" class="mobile-menu-cta" onclick="closeMenu()">Rejoindre la waitlist →</a>
 </div>
 
 <!-- HERO -->
@@ -1383,7 +1378,7 @@
     <p class="waitlist-micro">Les 50 premiers inscrits obtiennent 1 mois offert au plan Creator.</p>
   </div>
 
-  <div class="hero-video-wrap">
+  <div id="hero-video" class="hero-video-wrap">
     <div class="hero-video-label">
       <div class="hero-video-label-line"></div>
       Voir ThumbAI en action
