@@ -1384,7 +1384,7 @@
   @media (max-width: 768px) {
     /* Masquer mockups et tableaux KPI dans les onglets */
     .tab-mock,
-    .tab-kpi { display: none !important; }
+    .tab-stats { display: none !important; }
   }
 </style>
 </head>
@@ -1771,7 +1771,7 @@ Ton workflow actuel a 3 moments<br>où tu travailles dans le flou
           </div>
 
           <!-- Tableau stats -->
-          <div style="border:1px solid rgba(220,50,50,0.2); border-radius:10px; overflow:hidden; margin-bottom:24px; font-family:var(--font-mono); font-size:11px;">
+          <div class="tab-stats" style="border:1px solid rgba(220,50,50,0.2); border-radius:10px; overflow:hidden; margin-bottom:24px; font-family:var(--font-mono); font-size:11px;">
             <div style="display:flex; justify-content:space-between; padding:10px 14px; border-bottom:1px solid rgba(220,50,50,0.15); background:rgba(220,50,50,0.05);">
               <span style="color:#666;">Temps packaging avant tournage</span>
               <span style="color:#f87171; font-weight:700;">0 min</span>
