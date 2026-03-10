@@ -599,13 +599,16 @@
     }
 
     .footer-logo {
-      font-size: 16px;
-      font-weight: 700;
+      font-family: 'Syne', sans-serif !important;
+      font-size: 20px;
+      font-weight: 800 !important;
+      letter-spacing: -0.5px;
       color: var(--text);
       text-decoration: none;
     }
 
     .footer-logo span { color: var(--orange); }
+    .footer-copy { font-size: 13px; color: var(--text-3); }
 
     .footer-links {
       display: flex;
@@ -962,6 +965,20 @@
   document.querySelector('.resources-hero').querySelectorAll('.reveal').forEach(el => {
     el.classList.add('visible');
   });
+
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('main-nav');
+    if (window.scrollY > 30) {
+      nav.style.background = 'rgba(10,10,10,0.92)';
+      nav.style.backdropFilter = 'blur(20px)';
+      nav.style.borderBottomColor = 'rgba(255,255,255,0.08)';
+    } else {
+      nav.style.background = 'transparent';
+      nav.style.backdropFilter = 'none';
+      nav.style.borderBottomColor = 'transparent';
+    }
+  });
+
 </script>
 
 </body>
