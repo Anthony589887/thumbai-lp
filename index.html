@@ -1326,6 +1326,60 @@
     .tab-panel { grid-template-columns: 1fr !important; }
   }
 
+
+  /* ══ MOBILE RESPONSIVE FIXES ══ */
+  @media (max-width: 768px) {
+
+    /* Waitlist btn — 1 ligne */
+    .waitlist-btn {
+      font-size: 14px !important;
+      padding: 14px 20px !important;
+      white-space: nowrap !important;
+      width: 100% !important;
+      text-align: center !important;
+    }
+
+    /* Tous les titres section — style uniforme */
+    .section-title {
+      font-size: clamp(22px, 6.5vw, 32px) !important;
+      letter-spacing: -1.2px !important;
+      white-space: normal !important;
+      line-height: 1.15 !important;
+    }
+
+    /* Toutes les subheadlines section */
+    .section-sub {
+      font-size: 14px !important;
+      max-width: 100% !important;
+      line-height: 1.6 !important;
+    }
+
+    /* Galerie — 2 colonnes, pas de scroll horizontal */
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr !important;
+      min-width: unset !important;
+      gap: 10px !important;
+    }
+
+    /* Trust section — 1 colonne */
+    .trust-grid {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+    }
+
+    /* Score grid — 1 col */
+    .score-grid { grid-template-columns: 1fr !important; }
+
+    /* Final CTA title */
+    .final-cta-title {
+      font-size: clamp(22px, 6.5vw, 32px) !important;
+      letter-spacing: -1.2px !important;
+    }
+
+    /* Tabs section title — 2 lignes */
+    .tab-panel { grid-template-columns: 1fr !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -1556,7 +1610,7 @@
 <section class="explainer-section">
   <div class="container">
     <div style="text-align:center; max-width:720px; margin:0 auto 64px;" class="reveal">
-      <h2 class="section-title" style="font-size:clamp(22px,2.6vw,36px);white-space:nowrap;">La technique que les top créateurs utilisent sans jamais te l’expliquer.</h2>
+      <h2 class="section-title" style="font-size:clamp(22px,2.6vw,36px);">La technique que les top créateurs utilisent sans jamais te l’expliquer.</h2>
       <p class="section-sub" style="margin-top:20px;max-width:440px;margin-left:auto;margin-right:auto;">
         Le cerveau ne clique pas pour voir du contenu. Il clique pour combler un vide entre ce qu'il sait et ce qu'il ne peut pas deviner. C'est ce vide, volontairement créé entre ton titre et ta miniature, qui force le clic. ThumbAI le mesure. Et t'apprend à le construire.
       </p>
@@ -2490,7 +2544,7 @@ function switchTab(i) {
       <h2 class="section-title">Ce que ThumbAI peut faire.<br>Ce qu’il ne fera jamais.<br>Et pourquoi rejoindre maintenant change quelque chose.</h2>
     </div>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; max-width:960px; margin:0 auto;">
+    <div class="trust-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; max-width:960px; margin:0 auto;">
 
       <!-- Bloc gauche : sécurité -->
       <div class="reveal" style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:16px; padding:36px;">
