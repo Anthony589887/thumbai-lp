@@ -163,6 +163,9 @@
     50% { opacity: 0.4; transform: scale(0.7); }
   }
 
+  .hero .section-title,
+  .hero .section-sub { text-align: left; margin-left: 0; }
+
   .hero-title {
     font-family: var(--font-display);
     font-weight: 800;
@@ -406,13 +409,17 @@
     line-height: 1.1;
     letter-spacing: -2px;
     margin-bottom: 20px;
+    text-align: center;
   }
 
   .section-sub {
     font-size: 15px;
     color: var(--text-2);
-    max-width: 520px;
+    max-width: 580px;
     line-height: 1.65;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* ── DIAGNOSIS MOCK ── */
@@ -634,6 +641,7 @@
   }
 
   .vn-card {
+    max-width: 860px;
     border: 1px solid var(--border);
     border-radius: 16px;
     overflow: hidden;
@@ -2407,7 +2415,7 @@ function switchTab(i) {
     </div>
 
     <div style="display:flex; justify-content:center;">
-      <div class="reveal reveal-d2" style="width:100%; max-width:640px;">
+      <div class="reveal reveal-d2" style="width:100%; max-width:860px;">
         <div class="vn-card">
           <div class="vn-card-header">Exemple canonique — Vide Narratif</div>
           <div class="vn-body">
