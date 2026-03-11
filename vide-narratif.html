@@ -740,8 +740,9 @@
     .footer-links a:hover { color: var(--text-2); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
+    @media (max-width: 768px) {
+      .nav-links { display: none !important; }
+      .hamburger { display: flex !important; }
       .example-row { grid-template-columns: 1fr; }
       .example-arrow { display: none; }
       .counter-row { grid-template-columns: 1fr; }
