@@ -52,7 +52,7 @@
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 999;
+    z-index: 100;
     padding: 20px 48px;
     display: flex;
     align-items: center;
@@ -659,17 +659,20 @@
       }
     }
 
-  }
-  @media (max-width: 768px) {
-    .articles-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none !important; }
-    .hamburger { display: flex !important; }
-    .featured-visual { display: none; }
-    .resources-hero { padding: 60px 24px 48px; }
-    footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
-    .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
-  }
-  @media (max-width: 768px) { /* dummy to reopen */
+    @media (max-width: 768px) {
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .featured-visual { display: none; }
+
+      .resources-hero { padding: 60px 24px 48px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+    }
   
   /* ── HAMBURGER ── */
   .hamburger {
@@ -680,7 +683,7 @@
     border: none;
     cursor: pointer;
     padding: 4px;
-    z-index: 1000;
+    z-index: 200;
   }
   .hamburger span {
     display: block;
