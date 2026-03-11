@@ -1696,8 +1696,8 @@
 
     <!-- Tabs -->
     <div style="display:flex; justify-content:center; gap:8px; margin-bottom:48px; flex-wrap:wrap; width:100%;" id="tabs-nav">
-      <button class="tab-btn tab-active" onclick="switchTab(0)" style="flex:1; min-width:0; text-align:center; padding:10px 16px; border-radius:100px; border:1px solid var(--orange); background:var(--orange); color:#fff; font-size:14px; font-weight:600; cursor:pointer; font-family:var(--font-body); transition:all 0.2s;">Avant de filmer</button>
-      <button class="tab-btn" onclick="switchTab(1)" style="flex:1; min-width:0; text-align:center; padding:10px 16px; border-radius:100px; border:1px solid var(--border); background:transparent; color:var(--text-3); font-size:14px; font-weight:500; cursor:pointer; font-family:var(--font-body); transition:all 0.2s;">Avant de publier</button>
+      <button class="tab-btn" onclick="switchTab(0)" style="flex:1; min-width:0; text-align:center; padding:10px 16px; border-radius:100px; border:1px solid var(--border); background:transparent; color:var(--text-3); font-size:14px; font-weight:600; cursor:pointer; font-family:var(--font-body); transition:all 0.2s;">Avant de filmer</button>
+      <button class="tab-btn tab-active" onclick="switchTab(1)" style="flex:1; min-width:0; text-align:center; padding:10px 16px; border-radius:100px; border:1px solid var(--orange); background:var(--orange); color:#fff; font-size:14px; font-weight:500; cursor:pointer; font-family:var(--font-body); transition:all 0.2s;">Avant de publier</button>
       <button class="tab-btn" onclick="switchTab(2)" style="flex:1; min-width:0; text-align:center; padding:10px 16px; border-radius:100px; border:1px solid var(--border); background:transparent; color:var(--text-3); font-size:14px; font-weight:500; cursor:pointer; font-family:var(--font-body); transition:all 0.2s;">Après publication</button>
     </div>
 
@@ -1705,7 +1705,7 @@
     <div id="tabs-container" style="overflow:hidden;">
 
       <!-- TAB 1 -->
-      <div class="tab-panel" id="tab-0" style="display:grid; grid-template-columns:1fr 1fr; gap:2px; border-radius:16px; overflow:hidden; border:1px solid var(--border);">
+      <div class="tab-panel" id="tab-0" style="display:none; grid-template-columns:1fr 1fr; gap:2px; border-radius:16px; overflow:hidden; border:1px solid var(--border);">
         <!-- Gauche -->
         <div style="background:#111; padding:40px 36px;">
           <span style="display:inline-block; background:rgba(220,50,50,0.15); color:#f87171; font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:24px; font-family:var(--font-mono);">L'ANCIENNE MÉTHODE</span>
@@ -1974,7 +1974,7 @@
       </div>
 
       <!-- TAB 2 -->
-      <div class="tab-panel" id="tab-1" style="display:none; grid-template-columns:1fr 1fr; gap:2px; border-radius:16px; overflow:hidden; border:1px solid var(--border);">
+      <div class="tab-panel" id="tab-1" style="display:grid; grid-template-columns:1fr 1fr; gap:2px; border-radius:16px; overflow:hidden; border:1px solid var(--border);">
         <!-- Gauche -->
         <div style="background:#111; padding:40px 36px;">
           <span style="display:inline-block; background:rgba(220,50,50,0.15); color:#f87171; font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:24px; font-family:var(--font-mono);">L'ANCIENNE MÉTHODE</span>
